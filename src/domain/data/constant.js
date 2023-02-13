@@ -32,4 +32,15 @@ export const tournaments = [
     runnerUp: "",
     runnerUpTeam: "",
   },
+  {
+    tournament: 4,
+    season: "1",
+    date: "",
+    platform: "PlayStation 5",
+    videogame: "Dirt Rally 2.0",
+    champion: "",
+    championTeam: "",
+    runnerUp: "",
+    runnerUpTeam: "",
+  },
 ];

@@ -20,6 +20,11 @@ const Navbar = () => {
                   to="/tournaments"
                   onClick={setExpandedToFalse}
                 />
+                <NavbarItem
+                  label="Titles"
+                  to="/titles"
+                  onClick={setExpandedToFalse}
+                />
               </div>
             </div>
           </div>

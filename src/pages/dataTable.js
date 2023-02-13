@@ -1,7 +1,7 @@
 import React from "react";
 import Datatable from "react-data-table-component";
-import { columns, paginationOptions } from "../../domain/table-data/constant";
-import { tournaments } from "../../domain/data/constant";
+import { columns, paginationOptions } from "../domain/table-data/constant";
+import { tournaments } from "../domain/data/constant";
 
 const DataTable = () => {
   return (
@@ -9,7 +9,7 @@ const DataTable = () => {
       <Datatable
         columns={columns}
         data={tournaments}
-        title="Campeones Torneos Amigos Giusti"
+        title="Torneos Amigos Giusti"
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader

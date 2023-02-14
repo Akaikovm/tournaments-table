@@ -7,7 +7,7 @@ const DataTable = () => {
   return (
     <div className="mt-5">
       <Datatable
-        columns={columns}
+        columns={columns as any}
         data={tournaments}
         title="Torneos Amigos Giusti"
         pagination

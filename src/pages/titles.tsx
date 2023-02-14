@@ -1,7 +1,7 @@
 import React from "react";
 import { tournaments } from "../domain/data/constant";
 
-const numberOfTitles = (champion) => {
+const numberOfTitles = (champion: string) => {
   if (champion !== "") {
     const number = tournaments.filter(
       (tournament) => tournament.champion === champion
@@ -10,7 +10,7 @@ const numberOfTitles = (champion) => {
   }
 };
 
-const numberOfRunnerUp = (runnerUp) => {
+const numberOfRunnerUp = (runnerUp: string) => {
   if (runnerUp !== "") {
     const number = tournaments.filter(
       (tournament) => tournament.runnerUp === runnerUp

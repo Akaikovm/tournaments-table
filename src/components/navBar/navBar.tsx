@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavbarItem from "./navBar-item";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,26 +15,6 @@ const Navbar = () => {
     transition: transform 0.2s ease-in-out;
     display: flex;
     width: 100%;
-    @media (max-width: 1023px) {
-      visibility: hidden;
-      transform: scaleY(0);
-      transform-origin: top;
-      padding: 20px;
-      ${css`bg-indigo-700`}
-      left: 0;
-      top: 64px;
-      flex-direction: column;
-      position: fixed;
-      height: calc(100vh - 64px);
-      width: 100vw;
-      z-index: 2;
-      ${(props) =>
-        props.expanded &&
-        css`
-          visibility: visible;
-          transform: scaleY(1);
-        `};
-    }
   `;
 
   return (
@@ -46,7 +26,7 @@ const Navbar = () => {
               <div className="flex w-full lg:w-auto justify-between"></div>
               <Navigation
                 expanded={expanded}
-                className="items-center flex  ml-5"
+                className="items-center flex ml-5"
               >
                 <NavbarItem label="Home" to="/" onClick={setExpandedToFalse} />
                 <NavbarItem

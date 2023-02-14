@@ -3,7 +3,7 @@ import React from "react";
 const Rules = () => {
   return (
     <div className="p-6 pt-4 pb-4 mb-12 relative">
-      <h4 className="font-semibold mb-1">Da Rules</h4>
+      <h1 className="font-semibold  uppercase mb-8">Da Rules</h1>
       <ul className="list-disc list-inside pl-3">
         <li>
           <span className="relative right-2">

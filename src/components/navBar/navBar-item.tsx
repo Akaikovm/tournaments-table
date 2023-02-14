@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 let activeStyle = {
   textDecoration: "underline",
   backgroundColor: "black",
-  textColor: "red",
 };
 
 interface NavbarItemProps {

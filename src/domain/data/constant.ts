@@ -13,13 +13,13 @@ export const tournaments = [
   {
     tournament: 2,
     season: "1",
-    date: "",
+    date: "15/02/2023",
     platform: "PlayStation 5",
     videogame: "NBA 2K23",
-    champion: "",
-    championTeam: "",
-    runnerUp: "",
-    runnerUpTeam: "",
+    champion: "Sebastian Villamizar",
+    championTeam: "Chicago Bulls",
+    runnerUp: "CPU",
+    runnerUpTeam: "Dallas Mavericks",
   },
   {
     tournament: 3,

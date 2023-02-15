@@ -23,6 +23,7 @@ export const columns = [
     name: "Video Juego",
     selector: "videogame",
     sortable: true,
+    grow: 2,
   },
   {
     name: "Campeon",

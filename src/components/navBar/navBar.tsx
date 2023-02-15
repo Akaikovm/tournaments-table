@@ -31,7 +31,7 @@ const Navbar = () => {
                 <NavbarItem label="Home" to="/" onClick={setExpandedToFalse} />
                 <NavbarItem
                   label="Tournaments"
-                  to="/tournaments"
+                  to="/tournaments-table"
                   onClick={setExpandedToFalse}
                 />
                 <NavbarItem

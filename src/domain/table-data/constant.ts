@@ -20,15 +20,26 @@ export const columns = [
     sortable: true,
   },
   {
-    name: "Video Juego",
-    selector: "videogame",
+    name: "Juego",
+    selector: "game",
     sortable: true,
     grow: 2,
+  },
+  {
+    name: "Jugadores",
+    selector: "players",
+    sortable: true,
+  },
+  {
+    name: "Tier",
+    selector: "tier",
+    sortable: true,
   },
   {
     name: "Campeon",
     selector: "champion",
     sortable: true,
+    grow: 2,
   },
   {
     name: "Equipo Campeon",
@@ -36,13 +47,13 @@ export const columns = [
     sortable: true,
   },
   {
-    name: "Equipo Sub Campeon",
-    selector: "runnerUpTeam",
+    name: "Sub Campeon",
+    selector: "runnerUp",
     sortable: true,
   },
   {
-    name: "Sub Campeon",
-    selector: "runnerUp",
+    name: "Equipo Sub Campeon",
+    selector: "runnerUpTeam",
     sortable: true,
   },
 ];

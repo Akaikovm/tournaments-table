@@ -1,24 +1,26 @@
 import React from "react";
 import Datatable from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
-import { titleColumns } from "domain/table-data/tables-columns";
+import { standingsColumns } from "domain/table-data/tables-columns";
 import { setParticipantScores } from "utils/score-utils";
 
-const Titles = () => {
+
+const Standings = () => {
   return (
     <div className="mt-5">
       <Datatable
-        columns={titleColumns as any}
+        columns={standingsColumns as any}
         data={setParticipantScores()}
-        title="Titulos"
+        title="Puntos Totales"
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader
         fixedHeaderScrollHeight="600"
         defaultSortAsc={false}
+        defaultSortFieldId="points"
       />
     </div>
   );
 };
 
-export default Titles;
+export default Standings;

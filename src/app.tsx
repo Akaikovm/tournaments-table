@@ -7,6 +7,7 @@ import Navbar from "./components/navBar/navBar";
 import TournamentsTable from "./pages/tournaments-table";
 import TournamentDetails from "pages/tournament-details";
 import Provider from "components/context/provider";
+import Standings from "pages/standings";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/tournaments-table" element={<TournamentsTable />} />
             <Route path="/titles" element={<Titles />} />
+            <Route path="/standings" element={<Standings />} />
             <Route path="/tournament-details" element={<TournamentDetails />} />
           </Routes>
         </Router>

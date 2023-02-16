@@ -39,6 +39,11 @@ const Navbar = () => {
                   to="/titles"
                   onClick={setExpandedToFalse}
                 />
+                <NavbarItem
+                  label="Standings"
+                  to="/standings"
+                  onClick={setExpandedToFalse}
+                />
               </Navigation>
             </div>
           </div>

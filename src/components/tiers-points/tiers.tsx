@@ -2,7 +2,7 @@ import React from "react";
 
 const Tiers = () => {
   return (
-    <div className="p-6 pt-4 pb-4 mb-12 relative">
+    <div className="p-6 pt-4 pb-4 mb-12 relative text-white">
       <h1 className="font-semibold  uppercase mb-8">Tier Points</h1>
       <ul className="list-disc list-inside pl-3">
         <li>

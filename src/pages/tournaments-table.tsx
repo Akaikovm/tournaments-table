@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Datatable from "react-data-table-component";
+import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
 import { tournaments } from "../domain/data/constant";
 import { Link } from "react-router-dom";
@@ -87,6 +87,12 @@ const TournamentsTable = () => {
     },
   ];
 
+  createTheme("dark", {
+    background: {
+      default: "transparent",
+    },
+  });
+
   return (
     <div className="mt-5">
       <Datatable
@@ -97,6 +103,7 @@ const TournamentsTable = () => {
         paginationComponentOptions={paginationOptions}
         fixedHeader
         fixedHeaderScrollHeight="600"
+        theme="dark"
       />
     </div>
   );

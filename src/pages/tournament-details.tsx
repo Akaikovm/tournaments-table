@@ -6,7 +6,7 @@ const TournamentDetails = () => {
 
   console.log("state", state);
   return (
-    <div className="p-6 pt-4 pb-4 mb-12 relative">
+    <div className="p-6 pt-4 pb-4 mb-12 relative text-white">
       <h1>Campeon</h1>
       {state.champion}
     </div>

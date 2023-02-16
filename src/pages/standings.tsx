@@ -1,9 +1,14 @@
 import React from "react";
-import Datatable from "react-data-table-component";
+import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
 import { standingsColumns } from "domain/table-data/tables-columns";
 import { setParticipantScores } from "utils/score-utils";
 
+createTheme("dark", {
+  background: {
+    default: "transparent",
+  },
+});
 
 const Standings = () => {
   return (
@@ -18,6 +23,7 @@ const Standings = () => {
         fixedHeaderScrollHeight="600"
         defaultSortAsc={false}
         defaultSortFieldId="points"
+        theme="dark"
       />
     </div>
   );

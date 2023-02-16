@@ -1,7 +1,8 @@
 import React from "react";
 import { tournaments } from "../domain/data/constant";
 import Datatable from "react-data-table-component";
-import { paginationOptions, titleColumns } from "../domain/table-data/constant";
+import { paginationOptions } from "../domain/table-data/constant";
+import { titleColumns } from "domain/table-data/tables-columns";
 
 const setParticipantScores = (): Array<any> => {
   let participantSummary: Array<any> = [];

@@ -1,13 +1,14 @@
 import React from "react";
 import Datatable from "react-data-table-component";
-import { columns, paginationOptions } from "../domain/table-data/constant";
+import { paginationOptions } from "../domain/table-data/constant";
 import { tournaments } from "../domain/data/constant";
+import { tournamentsColumns } from "domain/table-data/tables-columns";
 
-const DataTable = () => {
+const TournamentsTable = () => {
   return (
     <div className="mt-5">
       <Datatable
-        columns={columns as any}
+        columns={tournamentsColumns as any}
         data={tournaments}
         title="PGG's Tournament Series"
         pagination
@@ -19,4 +20,4 @@ const DataTable = () => {
   );
 };
 
-export default DataTable;
+export default TournamentsTable;

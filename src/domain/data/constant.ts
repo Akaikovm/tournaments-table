@@ -1,6 +1,6 @@
 export const tournaments = [
   {
-    tournament: 1,
+    tournamentId: 1,
     season: "1",
     date: "10/02/2023",
     platform: "PlayStation 5",
@@ -13,7 +13,7 @@ export const tournaments = [
     tier: "A",
   },
   {
-    tournament: 2,
+    tournamentId: 2,
     season: "1",
     date: "15/02/2023",
     platform: "PlayStation 5",
@@ -26,7 +26,7 @@ export const tournaments = [
     tier: "C",
   },
   {
-    tournament: 3,
+    tournamentId: 3,
     season: "1",
     date: "",
     platform: "PlayStation 5",
@@ -39,7 +39,7 @@ export const tournaments = [
     tier: "B",
   },
   {
-    tournament: 4,
+    tournamentId: 4,
     season: "1",
     date: "",
     platform: "PlayStation 5",

@@ -8,7 +8,6 @@ export const titleColumns = [
     name: "Torneos IRL",
     selector: "tierIrl",
     sortable: true,
-    grow: 2,
   },
   {
     name: "Torneos Tier A",
@@ -38,6 +37,25 @@ export const standingsColumns = [
     selector: "points",
     sortable: true,
     id: "points",
-    grow: 4,
+  },
+  {
+    name: "Torneos IRL",
+    selector: "tierIrl",
+    sortable: true,
+  },
+  {
+    name: "Torneos Tier A",
+    selector: "tierA",
+    sortable: true,
+  },
+  {
+    name: "Torneos Tier B",
+    selector: "tierB",
+    sortable: true,
+  },
+  {
+    name: "Torneos Tier C",
+    selector: "tierC",
+    sortable: true,
   },
 ];

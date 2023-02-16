@@ -14,16 +14,6 @@ const TournamentsTable = () => {
 
   const tournamentsColumns = [
     {
-      name: "Torneo",
-      selector: "tournament",
-      sortable: true,
-    },
-    {
-      name: "Season",
-      selector: "season",
-      sortable: true,
-    },
-    {
       name: "Fecha",
       selector: "date",
       sortable: true,
@@ -38,11 +28,6 @@ const TournamentsTable = () => {
       selector: "game",
       sortable: true,
       grow: 2,
-    },
-    {
-      name: "Jugadores",
-      selector: "players",
-      sortable: true,
     },
     {
       name: "Tier",

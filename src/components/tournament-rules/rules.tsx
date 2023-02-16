@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Typed from "react-typed";
 
 const Rules = () => {
@@ -25,9 +26,12 @@ const Rules = () => {
           <p className="md:text-2xl text-xl font-bold text-gray-500">
             Ven y participa ahora en la PGG's Tournament Series
           </p>
-          <button className="bg-red-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">
+          <Link
+            to={{ pathname: `/tournaments-table` }}
+            className="bg-red-500 w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black"
+          >
             Ver Torneos
-          </button>
+          </Link>
         </div>
       </div>
       <div className="p-6 pt-4 pb-4 mb-12 relative text-white">

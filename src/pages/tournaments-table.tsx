@@ -1,10 +1,92 @@
-import React from "react";
+import React, { useContext } from "react";
 import Datatable from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
 import { tournaments } from "../domain/data/constant";
-import { tournamentsColumns } from "domain/table-data/tables-columns";
+import { Link } from "react-router-dom";
+import { AppContext } from "components/context/provider";
 
 const TournamentsTable = () => {
+  const [, setState] = useContext(AppContext);
+
+  const handleTournamentDetails = (tournament: any) => {
+    setState(tournament);
+  };
+
+  const tournamentsColumns = [
+    {
+      name: "Torneo",
+      selector: "tournament",
+      sortable: true,
+    },
+    {
+      name: "Season",
+      selector: "season",
+      sortable: true,
+    },
+    {
+      name: "Fecha",
+      selector: "date",
+      sortable: true,
+    },
+    {
+      name: "Plataforma",
+      selector: "platform",
+      sortable: true,
+    },
+    {
+      name: "Juego",
+      selector: "game",
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: "Jugadores",
+      selector: "players",
+      sortable: true,
+    },
+    {
+      name: "Tier",
+      selector: "tier",
+      sortable: true,
+    },
+    {
+      name: "Campeon",
+      selector: "champion",
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: "Equipo Campeon",
+      selector: "championTeam",
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: "Sub Campeon",
+      selector: "runnerUp",
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: "Equipo Sub Campeon",
+      selector: "runnerUpTeam",
+      sortable: true,
+      grow: 2,
+    },
+    {
+      name: "Detalles",
+      button: true,
+      cell: (tournament: any) => (
+        <Link
+          onClick={() => handleTournamentDetails(tournament)}
+          to={{ pathname: `/tournament-details` }}
+        >
+          Ver Detalles
+        </Link>
+      ),
+    },
+  ];
+
   return (
     <div className="mt-5">
       <Datatable

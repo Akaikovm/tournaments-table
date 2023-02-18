@@ -4,6 +4,7 @@ import { paginationOptions } from "../domain/table-data/constant";
 import { tournaments } from "../domain/data/constant";
 import { Link } from "react-router-dom";
 import { AppContext } from "components/context/provider";
+import { TitleBar } from "components/ui/titleBar";
 
 const TournamentsTable = () => {
   const [, setState] = useContext(AppContext);
@@ -65,18 +66,20 @@ const TournamentsTable = () => {
   });
 
   return (
-    <div className="mt-5">
+    <>
+      <div className="relative">
+        <TitleBar title="Torneos" />
+      </div>
       <Datatable
         columns={tournamentsColumns as any}
         data={tournaments}
-        title="Torneos"
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader
         fixedHeaderScrollHeight="600"
         theme="dark"
       />
-    </div>
+    </>
   );
 };
 

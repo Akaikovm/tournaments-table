@@ -3,6 +3,7 @@ import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
 import { standingsColumns } from "domain/table-data/tables-columns";
 import { setParticipantScores } from "utils/score-utils";
+import { TitleBar } from "components/ui/titleBar";
 
 createTheme("dark", {
   background: {
@@ -12,11 +13,13 @@ createTheme("dark", {
 
 const Standings = () => {
   return (
-    <div className="mt-5">
+    <>
+      <div className="relative">
+        <TitleBar title="Puntos Totales" />
+      </div>
       <Datatable
         columns={standingsColumns as any}
         data={setParticipantScores()}
-        title="Puntos Totales"
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader
@@ -25,7 +28,7 @@ const Standings = () => {
         defaultSortFieldId="points"
         theme="dark"
       />
-    </div>
+    </>
   );
 };
 

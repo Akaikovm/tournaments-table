@@ -22,7 +22,7 @@ const Navbar = () => {
   const iconStyle = { color: "white", fontSize: "1.5em" };
 
   return (
-    <nav className="flex justify-between items-center h-24 px-4  bg-gray-900">
+    <nav className="flex justify-between items-center h-24 px-4 bg-gray-800">
       {/* Desktop Nav */}
       {!nav && (
         <>

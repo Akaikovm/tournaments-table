@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Titles from "./pages/titles";
-import Navbar from "./components/navBar/navBar";
+import Navbar from "./components/ui/navBar/navBar";
 import TournamentsTable from "./pages/tournaments-table";
 import TournamentDetails from "pages/tournament-details";
 import Provider from "components/context/provider";

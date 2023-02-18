@@ -27,7 +27,7 @@ const TournamentsTable = () => {
       name: "Juego",
       selector: "game",
       sortable: true,
-      grow: 2,
+      grow: 1,
     },
     {
       name: "Tier",
@@ -38,25 +38,11 @@ const TournamentsTable = () => {
       name: "Campeon",
       selector: "champion",
       sortable: true,
-      grow: 2,
-    },
-    {
-      name: "Equipo Campeon",
-      selector: "championTeam",
-      sortable: true,
-      grow: 2,
     },
     {
       name: "Sub Campeon",
       selector: "runnerUp",
       sortable: true,
-      grow: 2,
-    },
-    {
-      name: "Equipo Sub Campeon",
-      selector: "runnerUpTeam",
-      sortable: true,
-      grow: 2,
     },
     {
       name: "Detalles",

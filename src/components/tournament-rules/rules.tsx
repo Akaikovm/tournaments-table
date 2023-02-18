@@ -13,7 +13,7 @@ const Rules = () => {
           </h1>
           <div className="flex justify-center items-center">
             <p className="md:text-5xl sm:text-4xl text-xl font-bold py-4">
-              Quieres que ser el mas
+              Quieres ser el mas
             </p>
             <Typed
               className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"

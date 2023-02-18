@@ -19,12 +19,14 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+  const iconStyle = { color: "white", fontSize: "1.5em" };
+
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
+    <nav className="flex justify-between items-center h-24 px-4  bg-gray-900">
       {/* Desktop Nav */}
       {!nav && (
         <>
-          <h1 className="w-full text-3xl font-bold text-red-500">
+          <h1 className="w-full text-3xl font-bold text-red-700">
             PGG's Tournament Series.
           </h1>
           <Navigation expanded={expanded} className="hidden md:flex">
@@ -48,20 +50,24 @@ const Navbar = () => {
         </>
       )}
       <div onClick={handleNav} className="block md:hidden">
-        {!nav && <AiOutlineMenu size={20} />}
+        {!nav && <AiOutlineMenu style={iconStyle} size={20} />}
       </div>
       {/* Responsive Nav */}
       <ul
         className={
           nav
-            ? "fixed left-0 top-0  w-[65%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10 pl-2"
+            ? "fixed left-0 top-0  w-[70%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10 pl-2"
             : "ease-in-out duration-500 fixed left-[-100%]"
         }
       >
         <div onClick={handleNav} className="block md:hidden mt-4">
-          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          {nav ? (
+            <AiOutlineClose style={iconStyle} size={20} />
+          ) : (
+            <AiOutlineMenu style={iconStyle} size={20} />
+          )}
         </div>
-        <h1 className="w-full text-3xl font-bold text-red-500 m-4">
+        <h1 className="w-full text-3xl font-bold text-red-700 m-4">
           PGG's Tournament Series
         </h1>
         <Navigation expanded={expanded}>
@@ -99,7 +105,7 @@ const Navbar = () => {
           />
         </Navigation>
       </ul>
-    </div>
+    </nav>
   );
 };
 

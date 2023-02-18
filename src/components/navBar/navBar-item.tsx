@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 let activeStyle = {
   textDecoration: "underline",
-  backgroundColor: "#EF4444",
+  backgroundColor: "#B91C1C",
 };
 
 interface NavbarItemProps {
@@ -19,7 +19,7 @@ const NavbarItem = ({ label, to, onClick }: NavbarItemProps) => {
         onClick={onClick}
         // exact
         to={to}
-        className="mb-1 px-3 py-2 rounded-md text-sm font-medium text-white hover:text-white hover:bg-red-500"
+        className="mb-1 px-3 py-2 rounded-md text-sm font-medium text-white hover:text-white hover:bg-red-700"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         {label}

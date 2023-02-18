@@ -69,7 +69,7 @@ const TournamentsTable = () => {
       <Datatable
         columns={tournamentsColumns as any}
         data={tournaments}
-        title="PGG's Tournament Series"
+        title="Torneos"
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader

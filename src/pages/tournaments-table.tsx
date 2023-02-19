@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
-import { tournaments } from "../domain/data/constant";
 import { Link } from "react-router-dom";
 import { AppContext } from "components/context/provider";
 import { TitleBar } from "components/ui/titleBar";
+import { useTournaments } from "hooks/use-tournaments";
 
 const TournamentsTable = () => {
   const [, setState] = useContext(AppContext);
+  const { data: tournaments } = useTournaments();
 
   const handleTournamentDetails = (tournament: any) => {
     setState(tournament);

@@ -26,6 +26,9 @@ const TournamentDetails = () => {
                     <li>
                       <span>{`Campeon: ${tournament.champion}`}</span>
                     </li>
+                    <li>
+                      <span>{`Tier: ${tournament.tier}`}</span>
+                    </li>
                   </ul>
                 </div>
               );

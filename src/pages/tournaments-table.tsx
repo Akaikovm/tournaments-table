@@ -4,11 +4,11 @@ import { paginationOptions } from "../domain/table-data/constant";
 import { Link } from "react-router-dom";
 import { AppContext } from "components/context/provider";
 import { TitleBar } from "components/ui/titleBar";
-import { useTournaments } from "hooks/use-tournaments";
+import { useGetTournaments } from "hooks/use-tournaments";
 
 const TournamentsTable = () => {
   const [, setState] = useContext(AppContext);
-  const { data: tournaments } = useTournaments();
+  const { data: tournaments } = useGetTournaments();
 
   const handleTournamentDetails = (tournament: any) => {
     setState(tournament);

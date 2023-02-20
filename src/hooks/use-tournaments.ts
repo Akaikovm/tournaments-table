@@ -6,6 +6,6 @@ const getTournaments = async () => {
   return data;
 };
 
-export function useTournaments() {
+export function useGetTournaments() {
   return useQuery(["tournament"], () => getTournaments());
 }

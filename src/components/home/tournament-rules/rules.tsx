@@ -92,6 +92,13 @@ const Rules = () => {
               titulo sera del segundo lugar.
             </span>
           </li>
+          <li>
+            <span className="relative right-2">
+              Los subcampeones de cada torneo tambien ganaran puntos para la
+              tabla de standings, ganaran la mitad de lo que gana el campeon
+              dependiendo del tier del torneo
+            </span>
+          </li>
         </ul>
       </div>
     </>

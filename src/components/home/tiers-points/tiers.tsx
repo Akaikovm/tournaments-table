@@ -7,7 +7,12 @@ const Tiers = () => {
       <ul className="list-disc list-inside pl-3">
         <li>
           <span className="relative right-2">
-            Torneo IRL 10 PTS (Ping Pong/ Wiffle / Futbol/ Poker)
+            Campeon de la temporada ganara 10 puntso
+          </span>
+        </li>
+        <li>
+          <span className="relative right-2">
+            Torneo IRL 7 PTS (Ping Pong/ Wiffle / Futbol/ Poker)
           </span>
         </li>
         <li>
@@ -18,7 +23,7 @@ const Tiers = () => {
         <li>
           <span className="relative right-2">
             Torneo Tier B 3 PTS (torneos mas casuales donde no estamos todo
-            (MLB/NBA) dan 3 puntos)|
+            (MLB/NBA) dan 3 puntos)
           </span>
         </li>
         <li>

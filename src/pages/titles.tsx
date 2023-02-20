@@ -4,6 +4,7 @@ import { paginationOptions } from "../domain/table-data/constant";
 import { titleColumns } from "domain/table-data/tables-columns";
 import { setParticipantScores } from "utils/score-utils";
 import { TitleBar } from "components/ui/titleBar";
+import { useGetTournaments } from "hooks/use-tournaments";
 
 createTheme("dark", {
   background: {
@@ -12,6 +13,7 @@ createTheme("dark", {
 });
 
 const Titles = () => {
+  const { data: tournaments } = useGetTournaments();
   return (
     <>
       <div className="relative">
@@ -19,7 +21,7 @@ const Titles = () => {
       </div>
       <Datatable
         columns={titleColumns as any}
-        data={setParticipantScores()}
+        data={setParticipantScores(tournaments)}
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader
@@ -27,6 +29,7 @@ const Titles = () => {
         defaultSortAsc={false}
         theme="dark"
         responsive
+        persistTableHead
       />
     </>
   );

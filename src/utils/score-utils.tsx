@@ -1,5 +1,3 @@
-import { tournaments } from "domain/data/constant";
-
 export const getParticipantScore = (tournament: any, participantData?: any) => {
   const participant: Record<string, any> = {
     name: tournament.champion,
@@ -37,10 +35,12 @@ export const getParticipantScore = (tournament: any, participantData?: any) => {
   return participant;
 };
 
-export const setParticipantScores = (): Array<any> => {
+export const setParticipantScores = (
+  tournaments: any[] | undefined
+): Array<any> => {
   let participantSummary: Array<any> = [];
 
-  tournaments.forEach((tournament) => {
+  tournaments?.forEach((tournament) => {
     if (tournament.champion.length > 1) {
       if (participantSummary.length > 1) {
         const participantData = participantSummary.find(

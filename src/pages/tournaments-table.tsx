@@ -1,18 +1,32 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
-import { Link } from "react-router-dom";
-import { AppContext } from "components/context/provider";
 import { TitleBar } from "components/ui/titleBar";
 import { useGetTournaments } from "hooks/use-tournaments";
 import { Button } from "components/ui/button";
+import { useDisclosure } from "components/ui/modal/use-disclosure";
+import { TournamentDetailsModal } from "components/tournament-details-modal";
 
 const TournamentsTable = () => {
-  const [, setState] = useContext(AppContext);
   const { data: tournaments } = useGetTournaments();
+  const [tournamentDetail, setTournamentDetail] = useState();
+  const [toggleCleared, setToggleCleared] = React.useState(false);
 
-  const handleTournamentDetails = (tournament: any) => {
-    setState(tournament);
+  const {
+    isOpen: ArchiveClientModalIsOpen,
+    onClose: ArchiveClientModalOnClose,
+    onOpen: ArchiveClientModalOnOpen,
+  } = useDisclosure();
+
+  const handleClickedRow = (selectedRows: any) => {
+    setTournamentDetail(selectedRows);
+    ArchiveClientModalOnOpen();
+
+    if (toggleCleared) {
+      setToggleCleared(false);
+    } else {
+      setToggleCleared(true);
+    }
   };
 
   const tournamentsColumns = [
@@ -47,18 +61,6 @@ const TournamentsTable = () => {
       selector: "runnerUp",
       sortable: true,
     },
-    {
-      name: "Detalles",
-      button: true,
-      cell: (tournament: any) => (
-        <Link
-          onClick={() => handleTournamentDetails(tournament)}
-          to={{ pathname: `/tournament-details` }}
-        >
-          Ver Detalles
-        </Link>
-      ),
-    },
   ];
 
   createTheme("dark", {
@@ -79,7 +81,7 @@ const TournamentsTable = () => {
               variant="primary"
               // onClick={() => )}
             >
-              Add Tournament
+              Añadir Torneo
             </Button>
           }
         />
@@ -92,6 +94,17 @@ const TournamentsTable = () => {
         fixedHeader
         fixedHeaderScrollHeight="600"
         theme="dark"
+        selectableRows
+        onSelectedRowsChange={handleClickedRow}
+        clearSelectedRows={toggleCleared}
+        responsive
+        persistTableHead
+        selectableRowsNoSelectAll
+      />
+      <TournamentDetailsModal
+        isOpen={ArchiveClientModalIsOpen}
+        onClose={ArchiveClientModalOnClose}
+        tournamentDetail={tournamentDetail}
       />
     </>
   );

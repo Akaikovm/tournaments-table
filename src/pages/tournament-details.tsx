@@ -3,17 +3,41 @@ import { AppContext } from "components/context/provider";
 import { TitleBar } from "components/ui/titleBar";
 
 const TournamentDetails = () => {
-  const [state] = useContext(AppContext);
+  const [tournamentDetails] = useContext(AppContext);
 
-  console.log("state", state);
   return (
     <>
       <div className="relative">
         <TitleBar title="Detalles de Torneo" />
       </div>
-      <div className="p-6 pt-4 pb-4 mb-12 relative text-white">
-        <h1>Campeon</h1>
-        {state.champion}
+      <div className="mt-8 text-white ml-5">
+        {tournamentDetails?.selectedRows?.length ? (
+          <div>
+            {tournamentDetails.selectedRows.map((tournament: any) => {
+              return (
+                <div key={tournament.id}>
+                  <ul>
+                    <li>
+                      <span>{`Fecha: ${tournament.date}`}</span>
+                    </li>
+                    <li>
+                      <span>{`Juego: ${tournament.game}`}</span>
+                    </li>
+                    <li>
+                      <span>{`Campeon: ${tournament.champion}`}</span>
+                    </li>
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="mt-8">
+            <span className="text-sm font-semibold text-red-700">
+              No hay Detalles de Torneo
+            </span>
+          </div>
+        )}
       </div>
     </>
   );

@@ -26,6 +26,7 @@ const Titles = () => {
         fixedHeaderScrollHeight="600"
         defaultSortAsc={false}
         theme="dark"
+        responsive
       />
     </>
   );

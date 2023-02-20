@@ -27,6 +27,7 @@ const Standings = () => {
         defaultSortAsc={false}
         defaultSortFieldId="points"
         theme="dark"
+        responsive
       />
     </>
   );

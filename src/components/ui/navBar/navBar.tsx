@@ -32,17 +32,17 @@ const Navbar = () => {
           <Navigation expanded={expanded} className="hidden md:flex">
             <NavbarItem label="Home" to="/" onClick={setExpandedToFalse} />
             <NavbarItem
-              label="Tournaments"
+              label="Torneos"
               to="/tournaments-table"
               onClick={setExpandedToFalse}
             />
             <NavbarItem
-              label="Titles"
+              label="Titulos"
               to="/titles"
               onClick={setExpandedToFalse}
             />
             <NavbarItem
-              label="Standings"
+              label="Estadisticas"
               to="/standings"
               onClick={setExpandedToFalse}
             />
@@ -80,7 +80,7 @@ const Navbar = () => {
             }}
           />
           <NavbarItem
-            label="Tournaments"
+            label="Torneos"
             to="/tournaments-table"
             onClick={() => {
               setExpandedToFalse();
@@ -88,7 +88,7 @@ const Navbar = () => {
             }}
           />
           <NavbarItem
-            label="Titles"
+            label="Titulos"
             to="/titles"
             onClick={() => {
               setExpandedToFalse();
@@ -96,7 +96,7 @@ const Navbar = () => {
             }}
           />
           <NavbarItem
-            label="Standings"
+            label="Estadisticas"
             to="/standings"
             onClick={() => {
               setExpandedToFalse();

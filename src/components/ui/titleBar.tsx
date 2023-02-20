@@ -3,7 +3,7 @@ import { Container } from "./container";
 import classNames from "classnames";
 import { twMerge } from "tailwind-merge";
 
-export function calculateClassName(...className: (string | undefined)[]) {
+export function calculateClassName(...className: (any)[]) {
   return twMerge(classNames(className));
 }
 

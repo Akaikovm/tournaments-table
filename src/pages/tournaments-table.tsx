@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "components/context/provider";
 import { TitleBar } from "components/ui/titleBar";
 import { useGetTournaments } from "hooks/use-tournaments";
+import { Button } from "components/ui/button";
 
 const TournamentsTable = () => {
   const [, setState] = useContext(AppContext);
@@ -69,7 +70,19 @@ const TournamentsTable = () => {
   return (
     <>
       <div className="relative">
-        <TitleBar title="Torneos" />
+        <TitleBar
+          title="Torneos"
+          action={
+            <Button
+              data-testid="addAppointmentNote"
+              className="mr-4"
+              variant="primary"
+              // onClick={() => )}
+            >
+              Add Tournament
+            </Button>
+          }
+        />
       </div>
       <Datatable
         columns={tournamentsColumns as any}

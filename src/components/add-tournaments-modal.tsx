@@ -19,7 +19,7 @@ export interface TournamentDetailsModalProps {
   tournamentDetail: any;
 }
 
-export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
+export function AddTournamentsModal(props: TournamentDetailsModalProps) {
   const { isOpen, onClose, tournamentDetail } = props;
   const [, setState] = useContext(AppContext);
   const deleteTournamentMutation = useDeleteTournament();

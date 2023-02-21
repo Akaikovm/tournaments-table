@@ -29,7 +29,7 @@ const deleteTournament = async (
     .then((res) => res.data);
 };
 
-export function useDeleteAppointment() {
+export function useDeleteTournament() {
   const queryClient = useQueryClient();
   const { addToast } = useToasts();
 
@@ -46,6 +46,61 @@ export function useDeleteAppointment() {
     },
     onError: (err, payload) => {
       const queryKey = ["tournament", payload.id].join("");
+      console.log(`Error ${queryKey} ${err}`);
+    },
+  });
+}
+
+//Post Request
+export interface AddTournamentPayload {
+  champion: string;
+  championTeam: string;
+  date: string;
+  game: string;
+  platform: string;
+  players: number;
+  runnerUp: string;
+  runnerUpTeam: string;
+  season: number;
+  tier: string;
+}
+
+const addTournament = async (addTournamentPayload: AddTournamentPayload) => {
+  return http
+    .post(`/tournament`, {
+      data: {
+        champion: addTournamentPayload.champion,
+        championTeam: addTournamentPayload.championTeam,
+        date: addTournamentPayload.date,
+        game: addTournamentPayload.game,
+        platform: addTournamentPayload.platform,
+        players: addTournamentPayload.players,
+        runnerUp: addTournamentPayload.runnerUp,
+        runnerUpTeam: addTournamentPayload.runnerUpTeam,
+        season: addTournamentPayload.season,
+        tier: addTournamentPayload.tier,
+      },
+    })
+    .then((res) => res.data);
+};
+
+export function useAddTournament() {
+  const queryClient = useQueryClient();
+  const { addToast } = useToasts();
+
+  return useMutation(addTournament, {
+    onSuccess: (_, payload) => {
+      addToast("Tournament Successfully Added", {
+        appearance: "success",
+        autoDismiss: true,
+      });
+      queryClient.invalidateQueries(["tournament", payload.date]);
+      setTimeout(() => {
+        queryClient.invalidateQueries();
+      }, 1000);
+    },
+    onError: (err, payload) => {
+      const queryKey = ["tournament", payload.date].join("");
       console.log(`Error ${queryKey} ${err}`);
     },
   });

@@ -6,6 +6,7 @@ import { useGetTournaments } from "hooks/use-tournaments";
 import { Button } from "components/ui/button";
 import { useDisclosure } from "components/ui/modal/use-disclosure";
 import { TournamentDetailsModal } from "components/tournament-details-modal";
+import { AddTournamentsModal } from "components/add-tournaments-modal";
 
 const TournamentsTable = () => {
   const { data: tournaments } = useGetTournaments();
@@ -13,14 +14,20 @@ const TournamentsTable = () => {
   const [toggleCleared, setToggleCleared] = React.useState(false);
 
   const {
-    isOpen: ArchiveClientModalIsOpen,
-    onClose: ArchiveClientModalOnClose,
-    onOpen: ArchiveClientModalOnOpen,
+    isOpen: TournamentDetailsModalIsOpen,
+    onClose: TournamentDetailsModalOnClose,
+    onOpen: TournamentDetailsModalOnOpen,
+  } = useDisclosure();
+
+  const {
+    isOpen: AddTournamentModalIsOpen,
+    onClose: AddTournamentModalIsOnClose,
+    onOpen: AddTournamentModalIsOnOpen,
   } = useDisclosure();
 
   const handleClickedRow = (selectedRows: any) => {
     setTournamentDetail(selectedRows);
-    ArchiveClientModalOnOpen();
+    TournamentDetailsModalOnOpen();
 
     if (toggleCleared) {
       setToggleCleared(false);
@@ -79,7 +86,7 @@ const TournamentsTable = () => {
               data-testid="addAppointmentNote"
               className="mr-4"
               variant="primary"
-              // onClick={() => )}
+              onClick={AddTournamentModalIsOnOpen}
             >
               Añadir Torneo
             </Button>
@@ -102,8 +109,13 @@ const TournamentsTable = () => {
         selectableRowsNoSelectAll
       />
       <TournamentDetailsModal
-        isOpen={ArchiveClientModalIsOpen}
-        onClose={ArchiveClientModalOnClose}
+        isOpen={TournamentDetailsModalIsOpen}
+        onClose={TournamentDetailsModalOnClose}
+        tournamentDetail={tournamentDetail}
+      />
+      <AddTournamentsModal
+        isOpen={AddTournamentModalIsOpen}
+        onClose={AddTournamentModalIsOnClose}
         tournamentDetail={tournamentDetail}
       />
     </>

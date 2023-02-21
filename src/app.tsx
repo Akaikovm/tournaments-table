@@ -10,6 +10,7 @@ import Provider from "components/context/provider";
 import Standings from "pages/standings";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ToastProvider } from "react-toast-notifications";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,22 +30,27 @@ function App() {
   return (
     <div>
       <QueryClientProvider client={queryClient}>
-        <Provider>
-          <Helmet defaultTitle="PGG's Tournament Series" />
-          <Router>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/tournaments-table" element={<TournamentsTable />} />
-              <Route path="/titles" element={<Titles />} />
-              <Route path="/standings" element={<Standings />} />
-              <Route
-                path="/tournament-details"
-                element={<TournamentDetails />}
-              />
-            </Routes>
-          </Router>
-        </Provider>
+        <ToastProvider placement="bottom-left" autoDismissTimeout={5000}>
+          <Provider>
+            <Helmet defaultTitle="PGG's Tournament Series" />
+            <Router>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/tournaments-table"
+                  element={<TournamentsTable />}
+                />
+                <Route path="/titles" element={<Titles />} />
+                <Route path="/standings" element={<Standings />} />
+                <Route
+                  path="/tournament-details"
+                  element={<TournamentDetails />}
+                />
+              </Routes>
+            </Router>
+          </Provider>
+        </ToastProvider>
       </QueryClientProvider>
     </div>
   );

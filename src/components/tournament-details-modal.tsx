@@ -11,6 +11,7 @@ import {
 } from "./ui/modal/modal";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "./context/provider";
+import { useDeleteAppointment } from "hooks/use-tournaments";
 
 export interface TournamentDetailsModalProps {
   isOpen: boolean;
@@ -21,6 +22,9 @@ export interface TournamentDetailsModalProps {
 export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
   const { isOpen, onClose, tournamentDetail } = props;
   const [, setState] = useContext(AppContext);
+  const deleteTournamentMutation = useDeleteAppointment();
+  const { mutate: deleteTournament, isLoading: isLoadingDelete } =
+    deleteTournamentMutation;
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -28,6 +32,15 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
     navigate(path);
     setState(tournamentDetail);
   };
+
+  const tournamentSelected = tournamentDetail?.selectedRows.map(
+    (tournament: any) => {
+      const id = tournament.id;
+      return id;
+    }
+  );
+
+  const tournamentID = tournamentSelected?.toString();
 
   return (
     <Modal isOpen={isOpen}>
@@ -40,8 +53,21 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
             />
           </div>
         </ModalHeader>
-        {/* <form onSubmit={}> */}
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            deleteTournament(
+              {
+                id: tournamentID,
+              },
+              {
+                onSuccess: () => {
+                  onClose();
+                },
+              }
+            );
+          }}
+        >
           <ModalBody>
             <div>
               <div className="flex items-center justify-center w-12 h-12 mx-auto bg-indigo-100 rounded-full">
@@ -99,12 +125,10 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
             <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
               <span className="flex w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:col-start-2">
                 <Button
-                  type="button"
+                  type="submit"
                   variant="danger"
                   className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  onClick={onClose}
-                  //   loading={}
-                  //   disabled={}
+                  loading={isLoadingDelete}
                 >
                   Eliminar
                 </Button>
@@ -112,7 +136,7 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
 
               <span className="flex w-full rounded-md shadow-sm sm:col-start-1">
                 <Button
-                  type="submit"
+                  type="button"
                   variant="primary"
                   className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                   onClick={routeChange}

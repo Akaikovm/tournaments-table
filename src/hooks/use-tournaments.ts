@@ -68,18 +68,16 @@ export interface AddTournamentPayload {
 const addTournament = async (addTournamentPayload: AddTournamentPayload) => {
   return http
     .post(`/tournament`, {
-      data: {
-        champion: addTournamentPayload.champion,
-        championTeam: addTournamentPayload.championTeam,
-        date: addTournamentPayload.date,
-        game: addTournamentPayload.game,
-        platform: addTournamentPayload.platform,
-        players: addTournamentPayload.players,
-        runnerUp: addTournamentPayload.runnerUp,
-        runnerUpTeam: addTournamentPayload.runnerUpTeam,
-        season: addTournamentPayload.season,
-        tier: addTournamentPayload.tier,
-      },
+      champion: addTournamentPayload.champion,
+      championTeam: addTournamentPayload.championTeam,
+      date: addTournamentPayload.date,
+      game: addTournamentPayload.game,
+      platform: addTournamentPayload.platform,
+      players: addTournamentPayload.players,
+      runnerUp: addTournamentPayload.runnerUp,
+      runnerUpTeam: addTournamentPayload.runnerUpTeam,
+      season: addTournamentPayload.season,
+      tier: addTournamentPayload.tier,
     })
     .then((res) => res.data);
 };

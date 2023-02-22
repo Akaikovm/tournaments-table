@@ -116,7 +116,6 @@ const TournamentsTable = () => {
       <AddTournamentsModal
         isOpen={AddTournamentModalIsOpen}
         onClose={AddTournamentModalIsOnClose}
-        tournamentDetail={tournamentDetail}
       />
     </>
   );

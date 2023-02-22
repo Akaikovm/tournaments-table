@@ -22,6 +22,7 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
     "react-tabs": "^6.0.0",
     "react-toast-notifications": "^2.5.1",
     "react-typed": "^1.2.0",

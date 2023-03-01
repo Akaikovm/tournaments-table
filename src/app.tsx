@@ -11,6 +11,8 @@ import Standings from "pages/standings";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastProvider } from "react-toast-notifications";
+import LiveTournaments from "pages/live-tournaments/live-tournaments";
+import Formula1Tournament from "pages/live-tournaments/formula-one-tournament";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +49,8 @@ function App() {
                   path="/tournament-details"
                   element={<TournamentDetails />}
                 />
+                <Route path="/live-tournaments" element={<LiveTournaments />} />
+                <Route path="/formula-1" element={<Formula1Tournament />} />
               </Routes>
             </Router>
           </Provider>

@@ -46,6 +46,13 @@ const Navbar = () => {
               to="/standings"
               onClick={setExpandedToFalse}
             />
+            <div className="flex-initial w-48">
+              <NavbarItem
+                label="Torneos En Vivo"
+                to="/live-tournaments"
+                onClick={setExpandedToFalse}
+              />
+            </div>
           </Navigation>
         </>
       )}
@@ -56,8 +63,8 @@ const Navbar = () => {
       <ul
         className={
           nav
-            ? "fixed left-0 top-0  w-[70%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 z-10 pl-2"
-            : "ease-in-out duration-500 fixed left-[-100%]"
+            ? "fixed left-0 top-0  w-[70%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-300 z-10 pl-2"
+            : "ease-in-out duration-300 fixed left-[-100%]"
         }
       >
         <div onClick={handleNav} className="block md:hidden mt-4">
@@ -98,6 +105,14 @@ const Navbar = () => {
           <NavbarItem
             label="Estadisticas"
             to="/standings"
+            onClick={() => {
+              setExpandedToFalse();
+              setNav(false);
+            }}
+          />
+          <NavbarItem
+            label="Torneos En Vivo"
+            to="/live-tournaments"
             onClick={() => {
               setExpandedToFalse();
               setNav(false);

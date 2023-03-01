@@ -100,10 +100,7 @@ export function AddTournamentsModal(props: TournamentDetailsModalProps) {
       <ModalContent>
         <ModalHeader>
           <div className="absolute top-0 right-0 pt-4 pr-4">
-            <CloseButton
-              testId="close-log-cancelation-modal"
-              onClick={onClose}
-            />
+            <CloseButton onClick={onClose} />
           </div>
         </ModalHeader>
         <form onSubmit={handleSubmit(onSubmit)}>

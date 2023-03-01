@@ -83,7 +83,6 @@ const TournamentsTable = () => {
           title="Torneos"
           action={
             <Button
-              data-testid="addAppointmentNote"
               className="mr-4"
               variant="primary"
               onClick={AddTournamentModalIsOnOpen}

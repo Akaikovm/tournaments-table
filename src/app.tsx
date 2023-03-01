@@ -12,7 +12,7 @@ import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastProvider } from "react-toast-notifications";
 import LiveTournaments from "pages/live-tournaments/live-tournaments";
-import Formula1Tournament from "pages/live-tournaments/formula-one-tournament";
+import Formula1Tournament from "pages/live-tournaments/formula-one-tournament/formula-one-tournament";
 
 const queryClient = new QueryClient({
   defaultOptions: {

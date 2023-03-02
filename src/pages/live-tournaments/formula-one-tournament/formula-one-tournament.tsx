@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -14,18 +14,42 @@ import Results from "./components/results";
 import Standings from "./components/standings";
 
 const Formula1Tournament = () => {
+  const [activeTab, setActiveTab] = useState<number>(0);
+
+  const handleTabClick = (index: number) => {
+    setActiveTab(index);
+  };
+
   return (
     <>
       <div className="relative">
         <TitleBar title="Formula 1 2023" />
       </div>
       <Tabs id="custom-animation" value="reglas">
-        <TabsHeader className="text-red-700 cursor-pointer bg-gray-800">
-          <Tab value={"reglas"}>Reglas</Tab>
-          <Tab value={"pilotos"}>Pilotos</Tab>
-          <Tab value={"calendario"}>Calendario</Tab>
-          <Tab value={"resultados"}>Resultados</Tab>
-          <Tab value={"estadisticas"}>Estadisticas</Tab>
+        <TabsHeader
+          className="text-red-700 cursor-pointer bg-gray-800"
+          indicatorProps={{
+            style: {
+              backgroundColor: "bg-slate-500",
+              opacity: "0.1",
+            },
+          }}
+        >
+          <Tab onClick={() => handleTabClick(0)} value={"reglas"}>
+            Reglas
+          </Tab>
+          <Tab onClick={() => handleTabClick(1)} value={"pilotos"}>
+            Pilotos
+          </Tab>
+          <Tab onClick={() => handleTabClick(2)} value={"calendario"}>
+            Calendario
+          </Tab>
+          <Tab onClick={() => handleTabClick(3)} value={"resultados"}>
+            Resultados
+          </Tab>
+          <Tab onClick={() => handleTabClick(4)} value={"estadisticas"}>
+            Estadisticas
+          </Tab>
         </TabsHeader>
         <TabsBody
           animate={{
@@ -34,20 +58,20 @@ const Formula1Tournament = () => {
             unmount: { y: 250 },
           }}
         >
-          <TabPanel className="text-white" value={"reglas"}>
-            <Rules />
+          <TabPanel value={"reglas"}>
+            {activeTab === 0 ? <Rules /> : null}
           </TabPanel>
-          <TabPanel className="text-white" value={"pilotos"}>
-            <Drivers />
+          <TabPanel value={"pilotos"}>
+            {activeTab === 1 ? <Drivers /> : null}
           </TabPanel>
-          <TabPanel className="text-white" value={"calendario"}>
-            <Calendar />
+          <TabPanel value={"calendario"}>
+            {activeTab === 2 ? <Calendar /> : null}
           </TabPanel>
-          <TabPanel className="text-white text-2xl" value={"resultados"}>
-            <Results />
+          <TabPanel value={"resultados"}>
+            {activeTab === 3 ? <Results /> : null}
           </TabPanel>
-          <TabPanel className="text-white text-2xl" value={"estadisticas"}>
-            <Standings />
+          <TabPanel value={"estadisticas"}>
+            {activeTab === 4 ? <Standings /> : null}
           </TabPanel>
         </TabsBody>
       </Tabs>

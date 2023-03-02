@@ -64,7 +64,7 @@ const Navbar = () => {
         className={
           nav
             ? "fixed left-0 top-0  w-[70%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-300 z-10 pl-2"
-            : "ease-in-out duration-300 fixed left-[-100%]"
+            : "ease-in-out fixed left-[-100%]"
         }
       >
         <div onClick={handleNav} className="block md:hidden mt-4">

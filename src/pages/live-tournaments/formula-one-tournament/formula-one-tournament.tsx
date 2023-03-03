@@ -20,12 +20,18 @@ const Formula1Tournament = () => {
     setActiveTab(index);
   };
 
+  const handleTabChangeResponsive = (event: any) => {
+    const value = parseInt(event.target.value, 10);
+    setActiveTab(value);
+  };
+
   return (
     <>
       <div className="relative">
         <TitleBar title="Formula 1 2023" />
       </div>
-      <Tabs id="custom-animation" value="reglas">
+      {/* Desktop tabs */}
+      <Tabs id="custom-animation" value="reglas" className="hidden md:block">
         <TabsHeader
           className="text-red-700 cursor-pointer bg-gray-800"
           indicatorProps={{
@@ -75,6 +81,25 @@ const Formula1Tournament = () => {
           </TabPanel>
         </TabsBody>
       </Tabs>
+      {/* Responsive */}
+      <div className="block sm:hidden overflow-hidden text-white">
+        <select
+          className="bg-black mt-4 w-full border-black-300 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-700 focus:border-red-700 sm:text-sm"
+          value={activeTab}
+          onChange={(event) => handleTabChangeResponsive(event)}
+        >
+          <option value={0}>Reglas</option>
+          <option value={1}>Pilotos</option>
+          <option value={2}>Calendario</option>
+          <option value={3}>Resultados</option>
+          <option value={4}>Estadisticas</option>
+        </select>
+        <div>{activeTab === 0 ? <Rules /> : null}</div>
+        <div>{activeTab === 1 ? <Drivers /> : null}</div>
+        <div>{activeTab === 2 ? <Calendar /> : null}</div>
+        <div>{activeTab === 3 ? <Results /> : null}</div>
+        <div>{activeTab === 4 ? <Standings /> : null}</div>
+      </div>
     </>
   );
 };

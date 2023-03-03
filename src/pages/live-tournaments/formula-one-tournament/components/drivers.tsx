@@ -2,7 +2,7 @@ import React from "react";
 
 const Drivers = () => {
   return (
-    <div className="text-white">
+    <div className="text-white mt-4">
       <h1 className="pl-3 text-2xl">Pilotos Inscritos</h1>
       <ul className="list-disc list-inside pl-3 mt-4">
         <li>

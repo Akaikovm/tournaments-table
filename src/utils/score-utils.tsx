@@ -8,6 +8,7 @@ export const getParticipantScore = (
         tierA: participantData ? participantData.tierA : 0,
         tierB: participantData ? participantData.tierB : 0,
         tierC: participantData ? participantData.tierC : 0,
+        runnerUp: participantData ? participantData.runnerUp : 0,
         points: participantData ? participantData.points : 0,
     };
 
@@ -49,6 +50,7 @@ export const getSubChampionshipPoints = (
         tierA: participantData ? participantData.tierA : 0,
         tierB: participantData ? participantData.tierB : 0,
         tierC: participantData ? participantData.tierC : 0,
+        runnerUp: participantData ? participantData.runnerUp + 1 : 1,
         points: participantData ? participantData.points : 0,
     };
 

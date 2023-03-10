@@ -25,7 +25,7 @@ const Drivers = () => {
           <span className="relative right-2">Angel Martin - Aston Martin</span>
         </li>
         <li>
-          <span className="relative right-2">Carlos Giusti - Alpine</span>
+          <span className="relative right-2">Carlos Giusti - Mclaren</span>
         </li>
         <li>
           <span className="relative right-2">Luis Garcia - Red Bull</span>

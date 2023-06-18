@@ -3,7 +3,7 @@ export const driversChampionship = [
   { driver: "Sebastian Villamizar", team: "Ferrari", points: 49 },
   { driver: "Yuki Tsunoda", team: "Alpha Tauri", points: 48 },
   { driver: "Sebastian Vettel", team: "Aston Martin", points: 46 },
-  { driver: "Andres Giusti", team: "Mclaren", points: 43 },
+  { driver: "Andres Giusti", team: "Mclaren", points: 44 },
   { driver: "George Russell", team: "Mercedes", points: 43 },
   { driver: "Lewis Hamilton", team: "Mercedes", points: 38 },
   { driver: "Carlos Giusti", team: "Mclaren", points: 34 },
@@ -26,7 +26,7 @@ export const driversChampionship = [
 ];
 
 export const constructorChampionship = [
-  { team: "Mclaren", points: 77 },
+  { team: "Mclaren", points: 78 },
   { team: "Mercedes", points: 75 },
   { team: "Aston Martin", points: 74 },
   { team: "Alpine", points: 69 },
@@ -131,7 +131,7 @@ export const azeraijanResults = [
 ];
 
 export const miamiResults = [
-  { driver: "Andres Giusti", team: "Mclaren", points: 25 },
+  { driver: "Andres Giusti", team: "Mclaren", points: 26 },
   { driver: "Angel Martin", team: "Aston Martin", points: 18 },
   { driver: "Yuki Tsunoda", team: "Alpha tauri", points: 15 },
   { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 12 },

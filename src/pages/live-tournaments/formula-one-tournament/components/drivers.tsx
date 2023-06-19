@@ -22,7 +22,7 @@ const Drivers = () => {
           </span>
         </li>
         <li>
-          <span className="relative right-2">Angel Martin - Aston Martin</span>
+          <span className="relative right-2">Angel Martin - Red Bull</span>
         </li>
         <li>
           <span className="relative right-2">Carlos Giusti - Mclaren</span>

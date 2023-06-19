@@ -13,7 +13,8 @@ const Rules = () => {
           </li>
           <li>
             <span className="relative right-2">
-              El formato de Clasificacion sera el mismo de la F1.
+              El formato de Clasificacion sera el mismo de la F1, pero solo una
+              Q.
             </span>
           </li>
           <li>
@@ -23,14 +24,13 @@ const Rules = () => {
           </li>
           <li>
             <span className="relative right-2">
-              Las Carreras tendran una distancia de 25%.
+              Las Carreras tendran una distancia de 50%.
             </span>
           </li>
           <li>
             <span className="relative right-2">
-              De no poderse crear el modo liga desde el juego por tener usuarios
-              crossplay el torneo sera jugado en modo carrera amistosa con las
-              normativas correspondientes.
+              Las Carreras se correran en modo multijugador clasico porque
+              tenemos jugadores Cross
             </span>
           </li>
           <li>
@@ -54,6 +54,12 @@ const Rules = () => {
             <span className="relative right-2">
               Si por alguna razon se cancela el torneo, quedaran como campeon y
               subcampeon los pilotos que de momento esten en 1er y 2do lugar.
+            </span>
+          </li>
+          <li>
+            <span className="relative right-2">
+              Si el circuito es callejero se correra sin daños y si no se
+              correra con daños reducidos.
             </span>
           </li>
         </ul>

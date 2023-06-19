@@ -11,6 +11,11 @@ import SaudiArabia from "./tracks/saudi-arabia";
 import Australia from "./tracks/australia";
 import Azerbaijan from "./tracks/azerbaijan";
 import Miami from "./tracks/miami";
+import Imola from "./tracks/imola";
+import Monaco from "./tracks/monaco";
+import Spain from "./tracks/spain";
+import Canada from "./tracks/canada";
+import Austria from "./tracks/austria";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -54,6 +59,21 @@ const Results = () => {
             <Tab onClick={() => handleTabClick(4)} value={"miami"}>
               Miami
             </Tab>
+            <Tab onClick={() => handleTabClick(5)} value={"imola"}>
+              Emilia Romagna
+            </Tab>
+            <Tab onClick={() => handleTabClick(6)} value={"monaco"}>
+              Monaco
+            </Tab>
+            <Tab onClick={() => handleTabClick(7)} value={"españa"}>
+              España
+            </Tab>
+            <Tab onClick={() => handleTabClick(8)} value={"canada"}>
+              Canada
+            </Tab>
+            <Tab onClick={() => handleTabClick(9)} value={"austria"}>
+              Austria
+            </Tab>
           </TabsHeader>
           <TabsBody
             animate={{
@@ -77,6 +97,21 @@ const Results = () => {
             <TabPanel value={"miami"}>
               {activeTab === 4 ? <Miami /> : null}
             </TabPanel>
+            <TabPanel value={"imola"}>
+              {activeTab === 5 ? <Imola /> : null}
+            </TabPanel>
+            <TabPanel value={"monaco"}>
+              {activeTab === 6 ? <Monaco /> : null}
+            </TabPanel>
+            <TabPanel value={"españa"}>
+              {activeTab === 7 ? <Spain /> : null}
+            </TabPanel>
+            <TabPanel value={"canada"}>
+              {activeTab === 8 ? <Canada /> : null}
+            </TabPanel>
+            <TabPanel value={"austria"}>
+              {activeTab === 9 ? <Austria /> : null}
+            </TabPanel>
           </TabsBody>
         </Tabs>
         {/* Responsive */}
@@ -91,12 +126,22 @@ const Results = () => {
             <option value={2}>Australia</option>
             <option value={3}>Azerbaiyan</option>
             <option value={4}>Miami</option>
+            <option value={5}>Emilia Romagna</option>
+            <option value={6}>Monaco</option>
+            <option value={7}>España</option>
+            <option value={8}>Canada</option>
+            <option value={9}>Austria</option>
           </select>
           <div>{activeTab === 0 ? <Bahrain /> : null}</div>
           <div>{activeTab === 1 ? <SaudiArabia /> : null}</div>
           <div>{activeTab === 2 ? <Australia /> : null}</div>
           <div>{activeTab === 3 ? <Azerbaijan /> : null}</div>
           <div>{activeTab === 4 ? <Miami /> : null}</div>
+          <div>{activeTab === 5 ? <Imola /> : null}</div>
+          <div>{activeTab === 6 ? <Monaco /> : null}</div>
+          <div>{activeTab === 7 ? <Spain /> : null}</div>
+          <div>{activeTab === 8 ? <Canada /> : null}</div>
+          <div>{activeTab === 9 ? <Austria /> : null}</div>
         </div>
       </div>
     </div>

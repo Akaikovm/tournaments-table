@@ -7,7 +7,7 @@ export const driversChampionship = [
   { driver: "George Russell", team: "Mercedes", points: 43 },
   { driver: "Lewis Hamilton", team: "Mercedes", points: 38 },
   { driver: "Carlos Giusti", team: "Mclaren", points: 34 },
-  { driver: "Angel Martin", team: "Aston Martin", points: 30 },
+  { driver: "Angel Martin", team: "Red Bull", points: 30 },
   { driver: "Valteri Bottas", team: "Alfa Romeo", points: 26 },
   { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 16 },
   { driver: "Pierre Gasly", team: "Alpha Tauri", points: 14 },
@@ -28,11 +28,11 @@ export const driversChampionship = [
 export const constructorChampionship = [
   { team: "Mclaren", points: 78 },
   { team: "Mercedes", points: 75 },
-  { team: "Aston Martin", points: 74 },
   { team: "Alpine", points: 69 },
+  { team: "Red Bull", points: 65 },
   { team: "Alpha Tauri", points: 62 },
   { team: "Ferrari", points: 49 },
-  { team: "Red Bull", points: 35 },
+  { team: "Aston Martin", points: 44 },
   { team: "Alfa Romeo", points: 26 },
   { team: "Williams", points: 20 },
   { team: "Hass", points: 11 },
@@ -152,3 +152,13 @@ export const miamiResults = [
   { driver: "Fernando Alonso", team: "Alpine", points: "NT" },
   { driver: "Valteri Bottas", team: "Alfa Romeo", points: "NT" },
 ];
+
+export const imolaResults = [];
+
+export const monacoResults = [];
+
+export const spainResults = [];
+
+export const canadaResults = [];
+
+export const austriaResults = [];

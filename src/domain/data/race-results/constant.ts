@@ -1,19 +1,19 @@
 export const driversChampionship = [
-  { driver: "Fernando Alonso", team: "Alpine", points: 63 },
-  { driver: "Sebastian Villamizar", team: "Ferrari", points: 49 },
+  { driver: "Fernando Alonso", team: "Alpine", points: 73 },
+  { driver: "Sebastian Villamizar", team: "Ferrari", points: 64 },
+  { driver: "Andres Giusti", team: "Mclaren", points: 62 },
+  { driver: "Carlos Giusti", team: "Mclaren", points: 60 },
+  { driver: "Sebastian Vettel", team: "Aston Martin", points: 52 },
+  { driver: "Lewis Hamilton", team: "Mercedes", points: 50 },
   { driver: "Yuki Tsunoda", team: "Alpha Tauri", points: 48 },
-  { driver: "Sebastian Vettel", team: "Aston Martin", points: 46 },
-  { driver: "Andres Giusti", team: "Mclaren", points: 44 },
-  { driver: "George Russell", team: "Mercedes", points: 43 },
-  { driver: "Lewis Hamilton", team: "Mercedes", points: 38 },
-  { driver: "Carlos Giusti", team: "Mclaren", points: 34 },
+  { driver: "George Russell", team: "Mercedes", points: 44 },
   { driver: "Angel Martin", team: "Red Bull", points: 30 },
-  { driver: "Valteri Bottas", team: "Alfa Romeo", points: 26 },
+  { driver: "Valteri Bottas", team: "Alfa Romeo", points: 30 },
+  { driver: "Pierre Gasly", team: "Alpha Tauri", points: 22 },
   { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 16 },
-  { driver: "Pierre Gasly", team: "Alpha Tauri", points: 14 },
+  { driver: "Sergio Perez", team: "Red Bull", points: 12 },
   { driver: "Alexander Albon", team: "Williams", points: 12 },
   { driver: "Kevin Magnussen", team: "Hass", points: 11 },
-  { driver: "Sergio Perez", team: "Red Bull", points: 10 },
   { driver: "Max Verstappen", team: "Red Bull", points: 9 },
   { driver: "Nicholas Latifi", team: "Williams", points: 8 },
   { driver: "Esteban Ocon", team: "Alpine", points: 6 },
@@ -26,14 +26,14 @@ export const driversChampionship = [
 ];
 
 export const constructorChampionship = [
-  { team: "Mclaren", points: 78 },
-  { team: "Mercedes", points: 75 },
-  { team: "Alpine", points: 69 },
-  { team: "Red Bull", points: 65 },
-  { team: "Alpha Tauri", points: 62 },
-  { team: "Ferrari", points: 49 },
-  { team: "Aston Martin", points: 44 },
-  { team: "Alfa Romeo", points: 26 },
+  { team: "Mclaren", points: 122 },
+  { team: "Mercedes", points: 88 },
+  { team: "Alpine", points: 79 },
+  { team: "Alpha Tauri", points: 70 },
+  { team: "Red Bull", points: 67 },
+  { team: "Ferrari", points: 64 },
+  { team: "Aston Martin", points: 50 },
+  { team: "Alfa Romeo", points: 30 },
   { team: "Williams", points: 20 },
   { team: "Hass", points: 11 },
 ];
@@ -153,7 +153,28 @@ export const miamiResults = [
   { driver: "Valteri Bottas", team: "Alfa Romeo", points: "NT" },
 ];
 
-export const imolaResults = [];
+export const imolaResults = [
+  { driver: "Carlos Giusti", team: "Mclaren", points: 26 },
+  { driver: "Andres Giusti", team: "Mclaren", points: 18 },
+  { driver: "Sebastian Villamizar", team: "Ferrari", points: 15 },
+  { driver: "Lewis Hamilton", team: "Mercedes", points: 12 },
+  { driver: "Fernando Alonso", team: "Alpine", points: 10 },
+  { driver: "Pierre Gasly", team: "Alfa Tauri", points: 8 },
+  { driver: "Sebastian Vettel", team: "Aston Martin", points: 6 },
+  { driver: "Valteri Bottas", team: "Alfa Romeo", points: 4 },
+  { driver: "Sergio Perez", team: "Red Bull", points: 2 },
+  { driver: "George Russell", team: "Mercedes", points: 1 },
+  { driver: "Lance Stroll", team: "Aston Martin", points: 0 },
+  { driver: "Esteban Ocon", team: "Alpine", points: 0 },
+  { driver: "Kevin Magnussen", team: "Hass", points: 0 },
+  { driver: "Nicholas Latifi", team: "Williams", points: 0 },
+  { driver: "Alexander Albon", team: "Williams", points: 0 },
+  { driver: "Mick Schumacher", team: "Hass", points: 0 },
+  { driver: "Guanyu Zhou", team: "Alfa Romeo", points: 0 },
+  { driver: "Jose Luis Peñaranda", team: "Red Bull", points: "NT" },
+  { driver: "Jose Marquez", team: "Ferrari", points: "NT" },
+  { driver: "Yuki Tsunoda", team: "Alpha tauri", points: "NT" },
+];
 
 export const monacoResults = [];
 

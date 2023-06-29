@@ -14,7 +14,7 @@ function Austria() {
         />
       </div>
       <div className="block md:flex-1 md:w-1/2">
-        <h1 className="text-2xl mt-4 text-center">RESULTADOS CARRERA 9</h1>
+        <h1 className="text-2xl mt-4 text-center">RESULTADOS CARRERA 10</h1>
         <RaceResults results={austriaResults} />
       </div>
     </div>

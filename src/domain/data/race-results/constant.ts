@@ -1,24 +1,24 @@
 export const driversChampionship = [
-  { driver: "Fernando Alonso", team: "Alpine", points: 91 },
-  { driver: "Andres Giusti", team: "Mclaren", points: 87 },
-  { driver: "Sebastian Villamizar", team: "Ferrari", points: 64 },
-  { driver: "Yuki Tsunoda", team: "Alpha Tauri", points: 63 },
-  { driver: "Carlos Giusti", team: "Mclaren", points: 60 },
+  { driver: "Andres Giusti", team: "Mclaren", points: 113 },
+  { driver: "Fernando Alonso", team: "Alpine", points: 101 },
+  { driver: "Carlos Giusti", team: "Mclaren", points: 78 },
+  { driver: "Sebastian Villamizar", team: "Ferrari", points: 76 },
+  { driver: "Yuki Tsunoda", team: "Alpha Tauri", points: 65 },
   { driver: "Lewis Hamilton", team: "Mercedes", points: 60 },
-  { driver: "Sebastian Vettel", team: "Aston Martin", points: 52 },
-  { driver: "George Russell", team: "Mercedes", points: 44 },
+  { driver: "Sebastian Vettel", team: "Aston Martin", points: 60 },
+  { driver: "George Russell", team: "Mercedes", points: 48 },
   { driver: "Valteri Bottas", team: "Alfa Romeo", points: 38 },
+  { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 31 },
   { driver: "Angel Martin", team: "Red Bull", points: 30 },
   { driver: "Pierre Gasly", team: "Alpha Tauri", points: 28 },
-  { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 16 },
+  { driver: "Esteban Ocon", team: "Alpine", points: 16 },
   { driver: "Alexander Albon", team: "Williams", points: 13 },
   { driver: "Kevin Magnussen", team: "Hass", points: 13 },
   { driver: "Sergio Perez", team: "Red Bull", points: 12 },
   { driver: "Charles Leclerc", team: "Ferrari", points: 12 },
-  { driver: "Esteban Ocon", team: "Alpine", points: 10 },
   { driver: "Max Verstappen", team: "Red Bull", points: 9 },
   { driver: "Nicholas Latifi", team: "Williams", points: 8 },
-  { driver: "Lance Stroll", team: "Aston Martin", points: 1 },
+  { driver: "Lance Stroll", team: "Aston Martin", points: 2 },
   { driver: "Mick Schumacher", team: "Hass", points: 0 },
   { driver: "Luis Garcia", team: "Red Bull", points: 0 },
   { driver: "Guanyu Zhou", team: "Alfa Romeo", points: 0 },
@@ -27,13 +27,13 @@ export const driversChampionship = [
 ];
 
 export const constructorChampionship = [
-  { team: "Mclaren", points: 147 },
-  { team: "Alpine", points: 101 },
-  { team: "Mercedes", points: 98 },
-  { team: "Alpha Tauri", points: 91 },
-  { team: "Ferrari", points: 76 },
-  { team: "Red Bull", points: 67 },
-  { team: "Aston Martin", points: 50 },
+  { team: "Mclaren", points: 191 },
+  { team: "Alpine", points: 117 },
+  { team: "Mercedes", points: 102 },
+  { team: "Alpha Tauri", points: 93 },
+  { team: "Ferrari", points: 88 },
+  { team: "Red Bull", points: 82 },
+  { team: "Aston Martin", points: 59 },
   { team: "Alfa Romeo", points: 38 },
   { team: "Williams", points: 21 },
   { team: "Hass", points: 13 },
@@ -200,8 +200,22 @@ export const monacoResults = [
   { driver: "Carlos Giusti", team: "Mclaren", points: "NT" },
 ];
 
-
-export const spainResults = [];
+export const spainResults = [
+  { driver: "Andres Giusti", team: "Mclaren", points: 26 },
+  { driver: "Carlos Giusti", team: "Mclaren", points: 18 },
+  { driver: "Jose Luis Peñaranda", team: "Red Bull", points: 15 },
+  { driver: "Sebastian Villamizar", team: "Ferrari", points: 12 },
+  { driver: "Fernando Alonso", team: "Alpine", points: 10 },
+  { driver: "Sebastian Vettel", team: "Aston Martin", points: 8 },
+  { driver: "Esteban Ocon", team: "Alpine", points: 6 },
+  { driver: "George Russell", team: "Mercedes", points: 4 },
+  { driver: "Yuki Tsunoda", team: "Alpha tauri", points: 2 },
+  { driver: "Lance Stroll", team: "Aston Martin", points: 1 },
+  { driver: "Charles Leclerc", team: "Ferrari", points: 0 },
+  { driver: "Lewis Hamilton", team: "Mercedes", points: "NT" },
+  { driver: "Pierre Gasly", team: "Alfa Tauri", points: "NT" },
+  { driver: "Angel Martin", team: "Red Bull", points: "NT" },
+];
 
 export const canadaResults = [];
 

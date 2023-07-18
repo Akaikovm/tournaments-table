@@ -16,6 +16,11 @@ import Monaco from "./tracks/monaco";
 import Spain from "./tracks/spain";
 import Canada from "./tracks/canada";
 import Austria from "./tracks/austria";
+import GreatBritain from "./tracks/greatBritain";
+import Hungary from "./tracks/hungary";
+import Belgium from "./tracks/belgium";
+import Netherlands from "./tracks/netherlands";
+import Italy from "./tracks/italy";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -74,6 +79,21 @@ const Results = () => {
             <Tab onClick={() => handleTabClick(9)} value={"austria"}>
               Austria
             </Tab>
+            <Tab onClick={() => handleTabClick(10)} value={"greatBritain"}>
+              Gran Bretaña
+            </Tab>
+            <Tab onClick={() => handleTabClick(11)} value={"hungria"}>
+              Hungria
+            </Tab>
+            <Tab onClick={() => handleTabClick(12)} value={"belgica"}>
+              Belgica
+            </Tab>
+            <Tab onClick={() => handleTabClick(13)} value={"holanda"}>
+              Holanda
+            </Tab>
+            <Tab onClick={() => handleTabClick(14)} value={"italia"}>
+              Italia
+            </Tab>
           </TabsHeader>
           <TabsBody
             animate={{
@@ -112,6 +132,21 @@ const Results = () => {
             <TabPanel value={"austria"}>
               {activeTab === 9 ? <Austria /> : null}
             </TabPanel>
+            <TabPanel value={"greatBritain"}>
+              {activeTab === 10 ? <GreatBritain /> : null}
+            </TabPanel>
+            <TabPanel value={"hungria"}>
+              {activeTab === 11 ? <Hungary /> : null}
+            </TabPanel>
+            <TabPanel value={"belgica"}>
+              {activeTab === 12 ? <Belgium /> : null}
+            </TabPanel>
+            <TabPanel value={"holanda"}>
+              {activeTab === 13 ? <Netherlands /> : null}
+            </TabPanel>
+            <TabPanel value={"italia"}>
+              {activeTab === 14 ? <Italy /> : null}
+            </TabPanel>
           </TabsBody>
         </Tabs>
         {/* Responsive */}
@@ -131,6 +166,11 @@ const Results = () => {
             <option value={7}>España</option>
             <option value={8}>Canada</option>
             <option value={9}>Austria</option>
+            <option value={10}>Gran Bretaña</option>
+            <option value={11}>Hungria</option>
+            <option value={12}>Belgica</option>
+            <option value={13}>Holanda</option>
+            <option value={14}>Italia</option>
           </select>
           <div>{activeTab === 0 ? <Bahrain /> : null}</div>
           <div>{activeTab === 1 ? <SaudiArabia /> : null}</div>
@@ -142,6 +182,11 @@ const Results = () => {
           <div>{activeTab === 7 ? <Spain /> : null}</div>
           <div>{activeTab === 8 ? <Canada /> : null}</div>
           <div>{activeTab === 9 ? <Austria /> : null}</div>
+          <div>{activeTab === 10 ? <GreatBritain /> : null}</div>
+          <div>{activeTab === 11 ? <Hungary /> : null}</div>
+          <div>{activeTab === 12 ? <Belgium /> : null}</div>
+          <div>{activeTab === 13 ? <Netherlands /> : null}</div>
+          <div>{activeTab === 14 ? <Italy /> : null}</div>
         </div>
       </div>
     </div>

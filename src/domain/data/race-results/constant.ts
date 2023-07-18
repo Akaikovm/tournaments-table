@@ -250,3 +250,13 @@ export const austriaResults = [
   { driver: "Andres Giusti", team: "Mclaren", points: "NT" },
   { driver: "Sebastian Vettel", team: "Aston Martin", points: "NT" },
 ];
+
+export const greatBritainResults = [];
+
+export const hungaryResults = [];
+
+export const belgiumResults = [];
+
+export const netherlandsResults = [];
+
+export const italyResults = [];

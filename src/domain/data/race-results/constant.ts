@@ -27,12 +27,12 @@ export const driversChampionship = [
 ];
 
 export const constructorChampionship = [
-  { team: "Mclaren", points: 220 },
-  { team: "Alpine", points: 157 },
-  { team: "Mercedes", points: 156 },
-  { team: "Ferrari", points: 119 },
-  { team: "Red Bull", points: 105 },
-  { team: "Alpha Tauri", points: 98 },
+  { team: "Mclaren", points: 264 },
+  { team: "Alpine", points: 168 },
+  { team: "Mercedes", points: 168 },
+  { team: "Ferrari", points: 131 },
+  { team: "Red Bull", points: 122 },
+  { team: "Alpha Tauri", points: 104 },
   { team: "Aston Martin", points: 80 },
   { team: "Alfa Romeo", points: 38 },
   { team: "Williams", points: 21 },

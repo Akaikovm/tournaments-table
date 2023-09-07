@@ -21,6 +21,12 @@ import Hungary from "./tracks/hungary";
 import Belgium from "./tracks/belgium";
 import Netherlands from "./tracks/netherlands";
 import Italy from "./tracks/italy";
+import Singapore from "./tracks/singapore";
+import Japan from "./tracks/japan";
+import Usa from "./tracks/usa";
+import Mexico from "./tracks/mexico";
+import Brazil from "./tracks/brazil";
+import AbuDabi from "./tracks/abudabi";
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -94,6 +100,24 @@ const Results = () => {
             <Tab onClick={() => handleTabClick(14)} value={"italia"}>
               Italia
             </Tab>
+            <Tab onClick={() => handleTabClick(15)} value={"singapore"}>
+              Singapore
+            </Tab>
+            <Tab onClick={() => handleTabClick(16)} value={"japan"}>
+              Japan
+            </Tab>
+            <Tab onClick={() => handleTabClick(17)} value={"usa"}>
+              Usa
+            </Tab>
+            <Tab onClick={() => handleTabClick(18)} value={"mexico"}>
+              Mexico
+            </Tab>
+            <Tab onClick={() => handleTabClick(19)} value={"brazil"}>
+              Brazil
+            </Tab>
+            <Tab onClick={() => handleTabClick(20)} value={"abudabi"}>
+              AbuDabi
+            </Tab>
           </TabsHeader>
           <TabsBody
             animate={{
@@ -147,6 +171,24 @@ const Results = () => {
             <TabPanel value={"italia"}>
               {activeTab === 14 ? <Italy /> : null}
             </TabPanel>
+            <TabPanel value={"singapore"}>
+              {activeTab === 15 ? <Singapore /> : null}
+            </TabPanel>
+            <TabPanel value={"japan"}>
+              {activeTab === 16 ? <Japan /> : null}
+            </TabPanel>
+            <TabPanel value={"usa"}>
+              {activeTab === 17 ? <Usa /> : null}
+            </TabPanel>
+            <TabPanel value={"mexico"}>
+              {activeTab === 18 ? <Mexico /> : null}
+            </TabPanel>
+            <TabPanel value={"brazil"}>
+              {activeTab === 19 ? <Brazil /> : null}
+            </TabPanel>
+            <TabPanel value={"abudabi"}>
+              {activeTab === 20 ? <AbuDabi /> : null}
+            </TabPanel>
           </TabsBody>
         </Tabs>
         {/* Responsive */}
@@ -171,6 +213,12 @@ const Results = () => {
             <option value={12}>Belgica</option>
             <option value={13}>Holanda</option>
             <option value={14}>Italia</option>
+            <option value={15}>Singapore</option>
+            <option value={16}>Japan</option>
+            <option value={17}>Usa</option>
+            <option value={18}>Mexico</option>
+            <option value={19}>Brazil</option>
+            <option value={20}>AbuDabi</option>
           </select>
           <div>{activeTab === 0 ? <Bahrain /> : null}</div>
           <div>{activeTab === 1 ? <SaudiArabia /> : null}</div>
@@ -187,6 +235,12 @@ const Results = () => {
           <div>{activeTab === 12 ? <Belgium /> : null}</div>
           <div>{activeTab === 13 ? <Netherlands /> : null}</div>
           <div>{activeTab === 14 ? <Italy /> : null}</div>
+          <div>{activeTab === 15 ? <Singapore /> : null}</div>
+          <div>{activeTab === 16 ? <Japan /> : null}</div>
+          <div>{activeTab === 17 ? <Usa /> : null}</div>
+          <div>{activeTab === 18 ? <Mexico /> : null}</div>
+          <div>{activeTab === 19 ? <Brazil /> : null}</div>
+          <div>{activeTab === 20 ? <AbuDabi /> : null}</div>
         </div>
       </div>
     </div>

@@ -57,22 +57,6 @@ const Calendar = () => {
         <li>
           <span className="relative right-2">GP De Japon 24 Septiembre</span>
         </li>
-        <li>
-          <span className="relative right-2">
-            GP De Las Americas 22 Octubre
-          </span>
-        </li>
-        <li>
-          <span className="relative right-2">GP De Mexico 29 de Octubre</span>
-        </li>
-        <li>
-          <span className="relative right-2">GP De Brazil 5 de Noviembre</span>
-        </li>
-        <li>
-          <span className="relative right-2">
-            GP De Abu Dabi 26 de Noviembre
-          </span>
-        </li>
       </ul>
     </div>
   );

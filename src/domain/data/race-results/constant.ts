@@ -369,11 +369,3 @@ export const japanResults = [
   { driver: "Carlos Giusti", team: "Mclaren", points: "NT" },
   { driver: "Andres Giusti", team: "Mclaren", points: "NT" },
 ];
-
-export const usaResults = [];
-
-export const mexicoResults = [];
-
-export const brazilResults = [];
-
-export const abudabiResults = [];

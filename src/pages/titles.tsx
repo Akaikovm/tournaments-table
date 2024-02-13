@@ -17,7 +17,7 @@ const Titles = () => {
   return (
     <>
       <div className="relative">
-        <TitleBar title="Titulos" />
+        <TitleBar title="Palmares" />
       </div>
       <Datatable
         columns={titleColumns as any}

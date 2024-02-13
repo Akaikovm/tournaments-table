@@ -29,7 +29,10 @@ const Navbar = () => {
           <h1 className="w-full text-3xl font-bold text-red-700">
             PGG's Tournament Series.
           </h1>
-          <Navigation expanded={expanded} className="hidden md:flex">
+          <Navigation
+            expanded={expanded}
+            className="hidden xl:flex w-full ml-40"
+          >
             <NavbarItem label="Home" to="/" onClick={setExpandedToFalse} />
             <NavbarItem
               label="Torneos"
@@ -46,17 +49,20 @@ const Navbar = () => {
               to="/standings"
               onClick={setExpandedToFalse}
             />
-            <div className="flex-initial w-48">
-              <NavbarItem
-                label="Torneos En Vivo"
-                to="/live-tournaments"
-                onClick={setExpandedToFalse}
-              />
-            </div>
+            <NavbarItem
+              label="Torneos En Vivo"
+              to="/live-tournaments"
+              onClick={setExpandedToFalse}
+            />
+            <NavbarItem
+              label="Torneos Completados"
+              to="/completed-tournaments"
+              onClick={setExpandedToFalse}
+            />
           </Navigation>
         </>
       )}
-      <div onClick={handleNav} className="block md:hidden">
+      <div onClick={handleNav} className="block xl:hidden">
         {!nav && <AiOutlineMenu style={iconStyle} size={20} />}
       </div>
       {/* Responsive Nav */}
@@ -113,6 +119,14 @@ const Navbar = () => {
           <NavbarItem
             label="Torneos En Vivo"
             to="/live-tournaments"
+            onClick={() => {
+              setExpandedToFalse();
+              setNav(false);
+            }}
+          />
+          <NavbarItem
+            label="Torneos Completados"
+            to="/completed-tournaments"
             onClick={() => {
               setExpandedToFalse();
               setNav(false);

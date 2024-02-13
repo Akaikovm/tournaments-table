@@ -7,17 +7,17 @@ const Slider = () => {
     <>
       <div className="text-white">
         <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
-          <p className="text-red-700 font-bold p-2">QUIEN VA A MEAR A QUIEN?</p>
+          <p className="text-red-700 font-bold p-2">QUIEN SERA EL GANADOR?</p>
           <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6">
             Juega con nosotros.
           </h1>
           <div className="flex justify-center items-center">
             <p className="md:text-5xl sm:text-4xl text-xl font-bold py-4">
-              Quieres ser el mas
+              Quieres ser el
             </p>
             <Typed
               className="md:text-5xl sm:text-4xl text-xl font-bold md:pl-4 pl-2"
-              strings={["PRO", "GUEVO", "MION"]}
+              strings={["MEJOR", "GANADOR", "VENCEDOR"]}
               typeSpeed={120}
               backSpeed={140}
               loop

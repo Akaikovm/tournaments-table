@@ -80,7 +80,7 @@ const TournamentsTable = () => {
     <>
       <div className="relative">
         <TitleBar
-          title="Torneos"
+          title="Torneos Agregados"
           action={
             <Button
               className="mr-4"

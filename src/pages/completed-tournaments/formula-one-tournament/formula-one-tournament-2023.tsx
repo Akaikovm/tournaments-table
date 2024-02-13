@@ -13,7 +13,7 @@ import Calendar from "./components/calendar";
 import Results from "./components/results";
 import Standings from "./components/standings";
 
-const Formula1Tournament = () => {
+const Formula1Tournament2023 = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleTabClick = (index: number) => {
@@ -104,4 +104,4 @@ const Formula1Tournament = () => {
   );
 };
 
-export default Formula1Tournament;
+export default Formula1Tournament2023;

@@ -8,11 +8,13 @@ import TournamentsTable from "./pages/tournaments-table";
 import TournamentDetails from "pages/tournament-details";
 import Provider from "components/context/provider";
 import Standings from "pages/standings";
-import "./App.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastProvider } from "react-toast-notifications";
 import LiveTournaments from "pages/live-tournaments/live-tournaments";
-import Formula1Tournament from "pages/live-tournaments/formula-one-tournament/formula-one-tournament";
+import CompletedTournaments from "pages/completed-tournaments/completed-tournaments";
+import Formula1Tournament2023 from "pages/completed-tournaments/formula-one-tournament/formula-one-tournament-2023";
+import Formula1Tournament2024 from "pages/live-tournaments/formula-one-tournament/formula-one-tournament-2024";
+import "./App.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,7 +52,18 @@ function App() {
                   element={<TournamentDetails />}
                 />
                 <Route path="/live-tournaments" element={<LiveTournaments />} />
-                <Route path="/formula-1" element={<Formula1Tournament />} />
+                <Route
+                  path="/completed-tournaments"
+                  element={<CompletedTournaments />}
+                />
+                <Route
+                  path="/formula-1-2023"
+                  element={<Formula1Tournament2023 />}
+                />
+                <Route
+                  path="/formula-1-2024"
+                  element={<Formula1Tournament2024 />}
+                />
               </Routes>
             </Router>
           </Provider>

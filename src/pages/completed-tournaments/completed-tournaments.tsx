@@ -3,18 +3,18 @@ import { TitleBar } from "components/ui/titleBar";
 import { Button } from "components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-const LiveTournaments = () => {
+const CompletedTournaments = () => {
   const navigate = useNavigate();
 
   const seeF1TournamentHandle = () => {
-    navigate("/formula-1-2024");
+    navigate("/formula-1-2023");
   };
 
   return (
     <>
       <div className="relative">
         <TitleBar
-          title="Formula 1 2024"
+          title="Formula 1 2023"
           action={
             <Button
               className="mr-4"
@@ -31,4 +31,4 @@ const LiveTournaments = () => {
   );
 };
 
-export default LiveTournaments;
+export default CompletedTournaments;

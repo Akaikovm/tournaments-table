@@ -1,5 +1,5 @@
-import { TitleBar } from "components/ui/titleBar";
 import React from "react";
+import { TitleBar } from "components/ui/titleBar";
 
 const Formula1Tournament2024 = () => {
   return (

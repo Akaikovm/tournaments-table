@@ -2,7 +2,7 @@ import React from "react";
 import Datatable, { createTheme } from "react-data-table-component";
 import { paginationOptions } from "../domain/table-data/constant";
 import { standingsColumns } from "domain/table-data/tables-columns";
-import { setParticipantScores } from "utils/score-utils";
+import { setParticipantResults } from "utils/score-utils";
 import { TitleBar } from "components/ui/titleBar";
 import { useGetTournaments } from "hooks/use-tournaments";
 
@@ -14,6 +14,7 @@ createTheme("dark", {
 
 const Standings = () => {
   const { data: tournaments } = useGetTournaments();
+
   return (
     <>
       <div className="relative">
@@ -21,7 +22,7 @@ const Standings = () => {
       </div>
       <Datatable
         columns={standingsColumns as any}
-        data={setParticipantScores(tournaments)}
+        data={setParticipantResults(tournaments)}
         pagination
         paginationComponentOptions={paginationOptions}
         fixedHeader

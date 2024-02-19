@@ -33,7 +33,7 @@ const platformOptions = [
 const tierOptions = [
   { value: "IRL", label: "IRL" },
   { value: "A", label: "A" },
-  { value: "B ", label: "B" },
+  { value: "B", label: "B" },
   { value: "C", label: "C" },
 ];
 

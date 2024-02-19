@@ -1,132 +1,129 @@
-export const getParticipantScore = (
-    tournament: Record<string, any>,
-    participantData?: Record<string, any>
-) => {
-    const participant: Record<string, any> = {
-        name: tournament.champion,
-        tierIrl: participantData ? participantData.tierIrl : 0,
-        tierA: participantData ? participantData.tierA : 0,
-        tierB: participantData ? participantData.tierB : 0,
-        tierC: participantData ? participantData.tierC : 0,
-        runnerUp: participantData ? participantData.runnerUp : 0,
-        points: participantData ? participantData.points : 0,
-    };
+interface Participant {
+  name: string;
+  tierIrl: number;
+  tierA: number;
+  tierB: number;
+  tierC: number;
+  runnerUp: number;
+  points: number;
+}
 
-    let points = 0;
+interface Tournament {
+  champion: string;
+  runnerUp: string;
+  tier: string;
+}
 
-    switch (tournament.tier) {
-        case "Irl":
-            participant.tierIrl = participant.tierIrl + 1;
-            points = 7;
-            break;
-        case "A":
-            participant.tierA = participant.tierA + 1;
-            points = 5;
-            break;
-        case "B":
-            participant.tierB = participant.tierB + 1;
-            points = 3;
-            break;
-        case "C":
-            participant.tierC = participant.tierC + 1;
-            points = 1;
-            break;
-        default:
-            break;
-    }
+export const getChampionshipPoints = (
+  tournament: Tournament,
+  participantData?: Participant
+): Participant => {
+  const participant: Participant = {
+    name: tournament.champion,
+    tierIrl: participantData?.tierIrl || 0,
+    tierA: participantData?.tierA || 0,
+    tierB: participantData?.tierB || 0,
+    tierC: participantData?.tierC || 0,
+    runnerUp: participantData?.runnerUp || 0,
+    points: participantData?.points || 0,
+  };
 
-    participant.points = participant.points + points;
+  switch (tournament.tier.trim()) {
+    case "Irl":
+      participant.tierIrl += 1;
+      participant.points += 7;
+      break;
+    case "A":
+      participant.tierA += 1;
+      participant.points += 5;
+      break;
+    case "B":
+      participant.tierB += 1;
+      participant.points += 3;
+      break;
+    case "C":
+      participant.tierC += 1;
+      participant.points += 1;
+      break;
+    default:
+      break;
+  }
 
-    return participant;
+  return participant;
 };
 
 export const getSubChampionshipPoints = (
-    tournament: Record<string, any>,
-    participantData?: Record<string, any>
-) => {
-    const participant: Record<string, any> = {
-        name: tournament.runnerUp,
-        tierIrl: participantData ? participantData.tierIrl : 0,
-        tierA: participantData ? participantData.tierA : 0,
-        tierB: participantData ? participantData.tierB : 0,
-        tierC: participantData ? participantData.tierC : 0,
-        runnerUp: participantData ? participantData.runnerUp + 1 : 1,
-        points: participantData ? participantData.points : 0,
-    };
+  tournament: Tournament,
+  participantData?: Participant
+): Participant => {
+  const participant: Participant = {
+    name: tournament.runnerUp,
+    tierIrl: participantData?.tierIrl || 0,
+    tierA: participantData?.tierA || 0,
+    tierB: participantData?.tierB || 0,
+    tierC: participantData?.tierC || 0,
+    runnerUp: (participantData?.runnerUp || 0) + 1,
+    points: participantData?.points || 0,
+  };
 
-    let points = 0;
+  switch (tournament.tier.trim()) {
+    case "Irl":
+      participant.points += 3.5;
+      break;
+    case "A":
+      participant.points += 2.5;
+      break;
+    case "B":
+      participant.points += 1.5;
+      break;
+    case "C":
+      participant.points += 0.5;
+      break;
+    default:
+      break;
+  }
 
-    switch (tournament.tier) {
-        case "Irl":
-            points = 3.5;
-            break;
-        case "A":
-            points = 2.5;
-            break;
-        case "B":
-            points = 1.5;
-            break;
-        case "C":
-            points = 0.5;
-            break;
-        default:
-            break;
-    }
-
-    participant.points = participant.points + points;
-
-    return participant;
+  return participant;
 };
 
-export const setParticipantScores = (
-    tournaments: any[] | undefined
-): Array<any> => {
-    let participantSummary: Array<any> = [];
+export const setParticipantResults = (
+  tournaments: Tournament[] | undefined
+): Participant[] => {
+  let participantSummary: Participant[] = [];
 
-    tournaments?.forEach((tournament) => {
-        // Championship points
+  tournaments?.forEach((tournament) => {
+    const validName = (name: string) =>
+      name.length > 1 && name.toLowerCase() !== "cpu";
 
-        if (
-            tournament.champion.length > 1 &&
-            tournament.champion.toLowerCase() !== "cpu"
-        ) {
-            const participantData = participantSummary.find(
-                (participant: any) => participant.name === tournament.champion
-            );
+    if (validName(tournament.champion)) {
+      const participantData = participantSummary.find(
+        (participant) => participant.name === tournament.champion
+      );
 
-            if (participantData) {
-                participantSummary = participantSummary.filter(
-                    (participant: any) =>
-                        participant.name !== tournament.champion
-                );
-            }
+      if (participantData) {
+        participantSummary = participantSummary.filter(
+          (participant) => participant.name !== tournament.champion
+        );
+      }
+      participantSummary.push(
+        getChampionshipPoints(tournament, participantData)
+      );
+    }
 
-            participantSummary.push(
-                getParticipantScore(tournament, participantData)
-            );
-        }
+    if (validName(tournament.runnerUp)) {
+      const participantData = participantSummary.find(
+        (participant) => participant.name === tournament.runnerUp
+      );
+      if (participantData) {
+        participantSummary = participantSummary.filter(
+          (participant) => participant.name !== tournament.runnerUp
+        );
+      }
+      participantSummary.push(
+        getSubChampionshipPoints(tournament, participantData)
+      );
+    }
+  });
 
-        //Sub Championship points
-        if (
-            tournament.runnerUp.length > 1 &&
-            tournament.runnerUp.toLowerCase() !== "cpu"
-        ) {
-            const participantData = participantSummary.find(
-                (participant: any) => participant.name === tournament.runnerUp
-            );
-
-            if (participantData) {
-                participantSummary = participantSummary.filter(
-                    (participant: any) =>
-                        participant.name !== tournament.runnerUp
-                );
-            }
-
-            participantSummary.push(
-                getSubChampionshipPoints(tournament, participantData)
-            );
-        }
-    });
-
-    return participantSummary;
+  return participantSummary;
 };

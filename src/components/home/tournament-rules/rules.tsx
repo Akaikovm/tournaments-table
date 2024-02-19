@@ -9,8 +9,7 @@ const Rules = () => {
           <li>
             <span className="relative right-2">
               Todo torneo pre-tabla no sera valido para la tabla pero puede ser
-              recordado y de igual forma es un torneo valido para miar a los
-              rivales.
+              recordado.
             </span>
           </li>
           <li>
@@ -23,12 +22,6 @@ const Rules = () => {
             <span className="relative right-2">
               Si el torneo no incluye CPU, cualquier nivel de dificultad puede
               ser usado en el juego (caso de que sea videojuego)
-            </span>
-          </li>
-          <li>
-            <span className="relative right-2">
-              El torneo debe tener un total de mas de 20 partidas entre los
-              jugadores involucrados para ser un torneo valido.
             </span>
           </li>
           <li>
@@ -61,20 +54,7 @@ const Rules = () => {
           </li>
           <li>
             <span className="relative right-2">
-              Para empezar algun torneo en estado de ebriedad los 4
-              participantes principales deben estar ebrios
-            </span>
-          </li>
-          <li>
-            <span className="relative right-2">
-              Para que un torneo de algun juego de nintendo que involucre a
-              mario bros sea valido los jugadores principales deben dar validez
-              previo torneo.
-            </span>
-          </li>
-          <li>
-            <span className="relative right-2">
-              Para un torneo de NBA/NFL/FIFA/NHL los involucrados deben dar
+              Para un torneo de NBA/NFL/FIFA/NHL/MLB los involucrados deben dar
               validez previo torneo.
             </span>
           </li>

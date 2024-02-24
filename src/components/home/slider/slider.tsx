@@ -23,7 +23,7 @@ const Slider = () => {
               loop
             />
           </div>
-          <p className="md:text-2xl text-xl font-bold text-gray-500">
+          <p className="md:text-2xl text-xl font-bold text-gray-600">
             Ven y participa ahora en la PGG's Tournament Series
           </p>
           <Link

@@ -64,20 +64,18 @@ const Formula1Tournament2023 = () => {
             unmount: { y: 250 },
           }}
         >
-          <TabPanel value={"reglas"}>
-            {activeTab === 0 ? <Rules /> : null}
-          </TabPanel>
+          <TabPanel value={"reglas"}>{activeTab === 0 && <Rules />}</TabPanel>
           <TabPanel value={"pilotos"}>
-            {activeTab === 1 ? <Drivers /> : null}
+            {activeTab === 1 && <Drivers />}
           </TabPanel>
           <TabPanel value={"calendario"}>
-            {activeTab === 2 ? <Calendar /> : null}
+            {activeTab === 2 && <Calendar />}
           </TabPanel>
           <TabPanel value={"resultados"}>
-            {activeTab === 3 ? <Results /> : null}
+            {activeTab === 3 && <Results />}
           </TabPanel>
           <TabPanel value={"estadisticas"}>
-            {activeTab === 4 ? <Standings /> : null}
+            {activeTab === 4 && <Standings />}
           </TabPanel>
         </TabsBody>
       </Tabs>
@@ -94,11 +92,11 @@ const Formula1Tournament2023 = () => {
           <option value={3}>Resultados</option>
           <option value={4}>Estadisticas</option>
         </select>
-        <div>{activeTab === 0 ? <Rules /> : null}</div>
-        <div>{activeTab === 1 ? <Drivers /> : null}</div>
-        <div>{activeTab === 2 ? <Calendar /> : null}</div>
-        <div>{activeTab === 3 ? <Results /> : null}</div>
-        <div>{activeTab === 4 ? <Standings /> : null}</div>
+        <div>{activeTab === 0 && <Rules />}</div>
+        <div>{activeTab === 1 && <Drivers />}</div>
+        <div>{activeTab === 2 && <Calendar />}</div>
+        <div>{activeTab === 3 && <Results />}</div>
+        <div>{activeTab === 4 && <Standings />}</div>
       </div>
     </>
   );

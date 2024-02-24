@@ -111,56 +111,48 @@ const Results = () => {
             }}
           >
             <TabPanel value={"barein"}>
-              {activeTab === 0 ? <Bahrain /> : null}
+              {activeTab === 0 && <Bahrain />}
             </TabPanel>
             <TabPanel value={"arabiaSaudita"}>
-              {activeTab === 1 ? <SaudiArabia /> : null}
+              {activeTab === 1 && <SaudiArabia />}
             </TabPanel>
             <TabPanel value={"australia"}>
-              {activeTab === 2 ? <Australia /> : null}
+              {activeTab === 2 && <Australia />}
             </TabPanel>
             <TabPanel value={"azerbaiyan"}>
-              {activeTab === 3 ? <Azerbaijan /> : null}
+              {activeTab === 3 && <Azerbaijan />}
             </TabPanel>
-            <TabPanel value={"miami"}>
-              {activeTab === 4 ? <Miami /> : null}
-            </TabPanel>
-            <TabPanel value={"imola"}>
-              {activeTab === 5 ? <Imola /> : null}
-            </TabPanel>
+            <TabPanel value={"miami"}>{activeTab === 4 && <Miami />}</TabPanel>
+            <TabPanel value={"imola"}>{activeTab === 5 && <Imola />}</TabPanel>
             <TabPanel value={"monaco"}>
-              {activeTab === 6 ? <Monaco /> : null}
+              {activeTab === 6 && <Monaco />}
             </TabPanel>
-            <TabPanel value={"españa"}>
-              {activeTab === 7 ? <Spain /> : null}
-            </TabPanel>
+            <TabPanel value={"españa"}>{activeTab === 7 && <Spain />}</TabPanel>
             <TabPanel value={"canada"}>
-              {activeTab === 8 ? <Canada /> : null}
+              {activeTab === 8 && <Canada />}
             </TabPanel>
             <TabPanel value={"austria"}>
-              {activeTab === 9 ? <Austria /> : null}
+              {activeTab === 9 && <Austria />}
             </TabPanel>
             <TabPanel value={"greatBritain"}>
-              {activeTab === 10 ? <GreatBritain /> : null}
+              {activeTab === 10 && <GreatBritain />}
             </TabPanel>
             <TabPanel value={"hungria"}>
-              {activeTab === 11 ? <Hungary /> : null}
+              {activeTab === 11 && <Hungary />}
             </TabPanel>
             <TabPanel value={"belgica"}>
-              {activeTab === 12 ? <Belgium /> : null}
+              {activeTab === 12 && <Belgium />}
             </TabPanel>
             <TabPanel value={"holanda"}>
-              {activeTab === 13 ? <Netherlands /> : null}
+              {activeTab === 13 && <Netherlands />}
             </TabPanel>
             <TabPanel value={"italia"}>
-              {activeTab === 14 ? <Italy /> : null}
+              {activeTab === 14 && <Italy />}
             </TabPanel>
             <TabPanel value={"singapore"}>
-              {activeTab === 15 ? <Singapore /> : null}
+              {activeTab === 15 && <Singapore />}
             </TabPanel>
-            <TabPanel value={"japan"}>
-              {activeTab === 16 ? <Japan /> : null}
-            </TabPanel>
+            <TabPanel value={"japan"}>{activeTab === 16 && <Japan />}</TabPanel>
           </TabsBody>
         </Tabs>
         {/* Responsive */}
@@ -188,23 +180,23 @@ const Results = () => {
             <option value={15}>Singapore</option>
             <option value={16}>Japan</option>
           </select>
-          <div>{activeTab === 0 ? <Bahrain /> : null}</div>
-          <div>{activeTab === 1 ? <SaudiArabia /> : null}</div>
-          <div>{activeTab === 2 ? <Australia /> : null}</div>
-          <div>{activeTab === 3 ? <Azerbaijan /> : null}</div>
-          <div>{activeTab === 4 ? <Miami /> : null}</div>
-          <div>{activeTab === 5 ? <Imola /> : null}</div>
-          <div>{activeTab === 6 ? <Monaco /> : null}</div>
-          <div>{activeTab === 7 ? <Spain /> : null}</div>
-          <div>{activeTab === 8 ? <Canada /> : null}</div>
-          <div>{activeTab === 9 ? <Austria /> : null}</div>
-          <div>{activeTab === 10 ? <GreatBritain /> : null}</div>
-          <div>{activeTab === 11 ? <Hungary /> : null}</div>
-          <div>{activeTab === 12 ? <Belgium /> : null}</div>
-          <div>{activeTab === 13 ? <Netherlands /> : null}</div>
-          <div>{activeTab === 14 ? <Italy /> : null}</div>
-          <div>{activeTab === 15 ? <Singapore /> : null}</div>
-          <div>{activeTab === 16 ? <Japan /> : null}</div>
+          <div>{activeTab === 0 && <Bahrain />}</div>
+          <div>{activeTab === 1 && <SaudiArabia />}</div>
+          <div>{activeTab === 2 && <Australia />}</div>
+          <div>{activeTab === 3 && <Azerbaijan />}</div>
+          <div>{activeTab === 4 && <Miami />}</div>
+          <div>{activeTab === 5 && <Imola />}</div>
+          <div>{activeTab === 6 && <Monaco />}</div>
+          <div>{activeTab === 7 && <Spain />}</div>
+          <div>{activeTab === 8 && <Canada />}</div>
+          <div>{activeTab === 9 && <Austria />}</div>
+          <div>{activeTab === 10 && <GreatBritain />}</div>
+          <div>{activeTab === 11 && <Hungary />}</div>
+          <div>{activeTab === 12 && <Belgium />}</div>
+          <div>{activeTab === 13 && <Netherlands />}</div>
+          <div>{activeTab === 14 && <Italy />}</div>
+          <div>{activeTab === 15 && <Singapore />}</div>
+          <div>{activeTab === 16 && <Japan />}</div>
         </div>
       </div>
     </div>

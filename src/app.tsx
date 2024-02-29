@@ -14,6 +14,7 @@ import LiveTournaments from "pages/live-tournaments/live-tournaments";
 import CompletedTournaments from "pages/completed-tournaments/completed-tournaments";
 import Formula1Tournament2023 from "pages/completed-tournaments/formula-one-tournament/formula-one-tournament-2023";
 import Formula1Tournament2024 from "pages/live-tournaments/formula-one-tournament/formula-one-tournament-2024";
+import Driver from "pages/live-tournaments/formula-one-tournament/components/driver";
 import "./App.css";
 
 const queryClient = new QueryClient({
@@ -64,6 +65,7 @@ function App() {
                   path="/formula-1-2024"
                   element={<Formula1Tournament2024 />}
                 />
+                <Route path="/driver/:name" element={<Driver />} />
               </Routes>
             </Router>
           </Provider>

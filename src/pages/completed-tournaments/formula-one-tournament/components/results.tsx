@@ -156,7 +156,7 @@ const Results = () => {
           </TabsBody>
         </Tabs>
         {/* Responsive */}
-        <div className="block sm:hidden overflow-hidden">
+        <div className="block md:hidden overflow-hidden">
           <select
             className="bg-black mt-4 w-full border-black-300 border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-700 focus:border-red-700 sm:text-sm"
             value={activeTab}

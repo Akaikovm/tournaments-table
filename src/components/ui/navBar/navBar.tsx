@@ -73,11 +73,15 @@ const Navbar = () => {
             : "ease-in-out fixed left-[-100%]"
         }
       >
-        <div onClick={handleNav} className="block md:hidden mt-4">
+        <div onClick={handleNav} className="mt-4">
           {nav ? (
-            <AiOutlineClose style={iconStyle} size={20} />
+            <AiOutlineClose
+              style={iconStyle}
+              size={30}
+              className="cursor-pointer block"
+            />
           ) : (
-            <AiOutlineMenu style={iconStyle} size={20} />
+            <AiOutlineMenu style={iconStyle} size={20} className="block" />
           )}
         </div>
         <h1 className="w-full text-3xl font-bold text-red-700 m-4">

@@ -16,7 +16,7 @@ const Drivers = () => {
       <div className="flex w-full max-w-screen-xs md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <h1 className="pl-3 text-2xl font-bold">F1 Drivers 2024</h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4 w-full justify-center mx-auto max-w-screen-xs md:max-w-screen-lg lg:max-w-screen-lg xl:max-w-screen-xl cursor-pointer">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-4 mt-4 w-full justify-center mx-auto max-w-screen-xs md:max-w-screen-lg lg:max-w-screen-lg xl:max-w-screen-xl cursor-pointer">
         {drivers2024.map((driver) => (
           <div
             onClick={() => handleDriverClick(driver)}
@@ -45,7 +45,7 @@ const Drivers = () => {
             <img
               src={process.env.PUBLIC_URL + driver.driverPhoto}
               alt="driverPhoto"
-              className="h-40 object-cover mt-2 ml-40 sm:ml-0 xl:ml-32 rounded-md"
+              className="h-40 object-cover mt-2 ml-40 sm:mx-auto xl:ml-32 rounded-md"
             />
           </div>
         ))}

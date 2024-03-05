@@ -69,7 +69,7 @@ export const drivers2024 = [
     driverNationality: "Venezuela",
     driverDob: "12/04/1997",
     driverPob: "San Cristobal, Venezuela",
-    driverPhoto: "/drivers/carlosgiusti.jpeg",
+    driverPhoto: "/drivers/carlosgiusti.png",
     carPhoto: "/cars/mclaren.jpg",
     team: "Mclaren",
     carNumber: "20",

@@ -41,22 +41,25 @@ const TournamentsTable = () => {
       name: "Fecha",
       selector: "date",
       sortable: true,
+      hide: "md",
     },
     {
       name: "Plataforma",
       selector: "platform",
       sortable: true,
+      hide: "md",
     },
     {
       name: "Juego",
       selector: "game",
       sortable: true,
-      grow: 1,
+      grow: 2,
     },
     {
       name: "Tier",
       selector: "tier",
       sortable: true,
+      hide: "md",
     },
     {
       name: "Campeon",
@@ -67,6 +70,7 @@ const TournamentsTable = () => {
       name: "Sub Campeon",
       selector: "runnerUp",
       sortable: true,
+      hide: "md",
     },
   ];
 
@@ -100,7 +104,7 @@ const TournamentsTable = () => {
         fixedHeader
         fixedHeaderScrollHeight="600"
         theme="dark"
-        selectableRows
+        selectableRows={false}
         onSelectedRowsChange={handleClickedRow}
         clearSelectedRows={toggleCleared}
         responsive

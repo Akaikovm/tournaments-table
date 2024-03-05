@@ -20,7 +20,7 @@ const Drivers = () => {
         {drivers2024.map((driver) => (
           <div
             onClick={() => handleDriverClick(driver)}
-            className="bg-white rounded-lg shadow-lg p-4 mb-4 transition-transform transform hover:scale-105"
+            className="bg-white rounded-lg shadow-lg p-4 mb-4 transition-transform transform hover:scale-105 mx-20 md:mx-0"
           >
             <div className="flex items-center justify-between mb-2">
               <div>

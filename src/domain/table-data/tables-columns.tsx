@@ -8,6 +8,7 @@ export const titleColumns = [
     name: "Titulos IRL",
     selector: "tierIrl",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Titulos Tier A",
@@ -18,11 +19,13 @@ export const titleColumns = [
     name: "Titulos Tier B",
     selector: "tierB",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Titulos Tier C",
     selector: "tierC",
     sortable: true,
+    hide: "md",
   },
 ];
 
@@ -42,25 +45,30 @@ export const standingsColumns = [
     name: "Titulos IRL",
     selector: "tierIrl",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Titulos Tier A",
     selector: "tierA",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Titulos Tier B",
     selector: "tierB",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Titulos Tier C",
     selector: "tierC",
     sortable: true,
+    hide: "md",
   },
   {
     name: "Subcampeonatos",
     selector: "runnerUp",
     sortable: true,
+    hide: "md",
   },
 ];

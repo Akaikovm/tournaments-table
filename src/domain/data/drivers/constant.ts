@@ -1,5 +1,6 @@
 export const drivers2024 = [
   {
+    id: 1,
     driverFirstName: "Sebastian",
     driverLastName: "Villamizar",
     driverPodiums: 8,
@@ -19,6 +20,7 @@ export const drivers2024 = [
     countryFlag: "https://flagicons.lipis.dev/flags/4x3/ve.svg",
   },
   {
+    id: 2,
     driverFirstName: "Jose Luis",
     driverLastName: "Peñaranda",
     driverPodiums: 1,
@@ -38,6 +40,7 @@ export const drivers2024 = [
     countryFlag: "https://flagicons.lipis.dev/flags/4x3/co.svg",
   },
   {
+    id: 3,
     driverFirstName: "Andres",
     driverLastName: "Giusti",
     driverPodiums: 9,
@@ -57,6 +60,7 @@ export const drivers2024 = [
     countryFlag: "https://flagicons.lipis.dev/flags/4x3/ve.svg",
   },
   {
+    id: 4,
     driverFirstName: "Carlos",
     driverLastName: "Giusti",
     driverPodiums: 7,
@@ -76,6 +80,7 @@ export const drivers2024 = [
     countryFlag: "https://flagicons.lipis.dev/flags/4x3/ve.svg",
   },
   {
+    id: 5,
     driverFirstName: "Angel",
     driverLastName: "Martin",
     driverPodiums: 4,

@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { TitleBar } from "components/ui/titleBar";
 import Drivers from "./components/drivers";
+import Calendar from "./components/calendar";
 
 const Formula1Tournament2024 = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -40,6 +41,9 @@ const Formula1Tournament2024 = () => {
           <Tab onClick={() => handleTabClick(0)} value={"pilotos"}>
             Pilotos
           </Tab>
+          <Tab onClick={() => handleTabClick(1)} value={"calendario"}>
+            Calendario
+          </Tab>
         </TabsHeader>
         <TabsBody
           animate={{
@@ -51,6 +55,9 @@ const Formula1Tournament2024 = () => {
           <TabPanel value={"pilotos"}>
             {activeTab === 0 && <Drivers />}
           </TabPanel>
+          <TabPanel value={"calendario"}>
+            {activeTab === 1 && <Calendar />}
+          </TabPanel>
         </TabsBody>
       </Tabs>
       {/* Responsive */}
@@ -61,8 +68,10 @@ const Formula1Tournament2024 = () => {
           onChange={(event) => handleTabChangeResponsive(event)}
         >
           <option value={0}>Pilotos</option>
+          <option value={1}>Calendario</option>
         </select>
         <div>{activeTab === 0 && <Drivers />}</div>
+        <div>{activeTab === 1 && <Calendar />}</div>
       </div>
     </>
   );

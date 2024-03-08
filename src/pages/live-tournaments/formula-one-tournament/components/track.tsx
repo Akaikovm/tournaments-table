@@ -1,13 +1,13 @@
 import React from "react";
 import RaceResults from "../../../completed-tournaments/formula-one-tournament/components/raceResults";
 
-function Track({
+const Track = ({
   trackName,
   trackNumber,
   trackResults,
   trackAlt,
   trackCountry,
-}: any) {
+}: any) => {
   return (
     <div className="text-white block md:flex">
       <div className="block md:flex-1 md:w-1/2">
@@ -26,6 +26,6 @@ function Track({
       </div>
     </div>
   );
-}
+};
 
 export default Track;

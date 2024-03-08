@@ -45,7 +45,7 @@ const Drivers = () => {
             <img
               src={process.env.PUBLIC_URL + driver.driverPhoto}
               alt="driverPhoto"
-              className="h-40 object-cover mt-2 ml-40 sm:mx-auto xl:ml-32 rounded-md"
+              className="h-40 object-cover mt-2 mx-auto xl:ml-32 rounded-md"
             />
           </div>
         ))}

@@ -30,7 +30,7 @@ const Formula1Tournament2024 = () => {
       {/* Desktop tabs */}
       <Tabs id="custom-animation" value="pilotos" className="hidden md:block">
         <TabsHeader
-          className="text-red-700 cursor-pointer bg-gray-800"
+          className="text-red-700 cursor-pointer bg-gray-800 z-0"
           indicatorProps={{
             style: {
               backgroundColor: "bg-slate-500",

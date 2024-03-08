@@ -53,7 +53,6 @@ const TournamentsTable = () => {
       name: "Juego",
       selector: "game",
       sortable: true,
-      grow: 2,
     },
     {
       name: "Tier",

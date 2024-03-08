@@ -10,7 +10,7 @@ const Driver = () => {
   }
 
   return (
-    <div className="flex p-8 bg-black mx-auto max-w-screen-xl mt-8 text-white border border-gray-600">
+    <div className="flex p-8  mx-auto max-w-screen-xl mt-8 text-white bg-gray-800 rounded-lg">
       <div className="md:flex">
         <div className="md:mr-8 md:w-1/2">
           <img
@@ -40,7 +40,7 @@ const Driver = () => {
             <img
               src={process.env.PUBLIC_URL + driver.carPhoto}
               alt="car"
-              className="w-full h-full"
+              className="w-full h-full rounded-lg"
             />
 
             <ul className="mt-4">

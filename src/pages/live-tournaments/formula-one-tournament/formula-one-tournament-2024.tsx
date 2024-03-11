@@ -9,6 +9,7 @@ import {
 import { TitleBar } from "components/ui/titleBar";
 import Drivers from "./components/drivers";
 import Calendar from "./components/calendar";
+import Standings from "./components/standings";
 
 const Formula1Tournament2024 = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -44,6 +45,9 @@ const Formula1Tournament2024 = () => {
           <Tab onClick={() => handleTabClick(1)} value={"calendario"}>
             Calendario
           </Tab>
+          <Tab onClick={() => handleTabClick(2)} value={"estadisticas"}>
+            Estadisticas
+          </Tab>
         </TabsHeader>
         <TabsBody
           animate={{
@@ -58,6 +62,9 @@ const Formula1Tournament2024 = () => {
           <TabPanel value={"calendario"}>
             {activeTab === 1 && <Calendar />}
           </TabPanel>
+          <TabPanel value={"estadisticas"}>
+            {activeTab === 2 && <Standings />}
+          </TabPanel>
         </TabsBody>
       </Tabs>
       {/* Responsive */}
@@ -69,9 +76,11 @@ const Formula1Tournament2024 = () => {
         >
           <option value={0}>Pilotos</option>
           <option value={1}>Calendario</option>
+          <option value={2}>Estadisticas</option>
         </select>
         <div>{activeTab === 0 && <Drivers />}</div>
         <div>{activeTab === 1 && <Calendar />}</div>
+        <div>{activeTab === 2 && <Standings />}</div>
       </div>
     </>
   );

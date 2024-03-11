@@ -81,7 +81,7 @@ const Calendar = () => {
               onClick={() => handleCardClick(track)}
               className="card-container mx-20 md:mx-0"
             >
-              <div className="front bg-white rounded-lg shadow-lg p-4 mb-4 transition-transform transform hover:scale-105 relative cursor-pointer ">
+              <div className="front bg-white rounded-lg shadow-lg p-4 mb-4 transition-transform transform hover:scale-105 relative cursor-pointer">
                 <div className="flex items-center justify-between mb-2">
                   <div>
                     <p className="text-sm text-red-700 uppercase">

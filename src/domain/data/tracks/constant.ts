@@ -70,7 +70,7 @@ export const tracks2024 = [
         driverFirstName: "Daniel",
         driverLastName: "Ricciardo",
         driverTeam: "Alpha Tauri",
-        driverPoints: "4",
+        driverPoints: 4,
         fastestLap: false,
       },
       {
@@ -78,7 +78,7 @@ export const tracks2024 = [
         driverFirstName: "Pierre",
         driverLastName: "Gasly",
         driverTeam: "Alpine",
-        driverPoints: "2",
+        driverPoints: 2,
         fastestLap: false,
       },
       {
@@ -86,7 +86,7 @@ export const tracks2024 = [
         driverFirstName: "Esteban",
         driverLastName: "Ocon",
         driverTeam: "Alpine",
-        driverPoints: "1",
+        driverPoints: 1,
         fastestLap: false,
       },
       {

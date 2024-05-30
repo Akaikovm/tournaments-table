@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { TitleBar } from "components/ui/titleBar";
 import Pool from "./components/pool";
+import AmericasAndEuroTournamentTable from "./components/americas-and-euro-tournament-table";
 
 const EuroCupAndAmericasCupTournament2024 = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -54,7 +55,9 @@ const EuroCupAndAmericasCupTournament2024 = () => {
           <TabPanel value={"quiniela"}>{activeTab === 0 && <Pool />}</TabPanel>
           <TabPanel value={"resultados"}>
             {activeTab === 1 && (
-              <span className="text-white">No hay resultados</span>
+              <span>
+                <AmericasAndEuroTournamentTable />
+              </span>
             )}
           </TabPanel>
         </TabsBody>
@@ -72,7 +75,9 @@ const EuroCupAndAmericasCupTournament2024 = () => {
         <div>{activeTab === 0 && <Pool />}</div>
         <div>
           {activeTab === 1 && (
-            <span className="text-white">No hay resultados</span>
+            <span>
+              <AmericasAndEuroTournamentTable />
+            </span>
           )}
         </div>
       </div>

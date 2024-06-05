@@ -1,21 +1,21 @@
-const resultList = [
+export const resultList = [
   {
     id: 0,
     tournament: "euro",
     localTeam: "Alemania",
     awayTeam: "Escocia",
-    scoreLocal: 3,
+    scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: true,
+    gamePlayed: false,
   },
   {
     id: 1,
     tournament: "euro",
     localTeam: "Hungria",
     awayTeam: "Suiza",
-    scoreLocal: 1,
-    scoreAway: 1,
-    gamePlayed: true,
+    scoreLocal: 0,
+    scoreAway: 0,
+    gamePlayed: false,
   },
   {
     id: 2,
@@ -166,9 +166,9 @@ const resultList = [
     tournament: "america",
     localTeam: "Argentina",
     awayTeam: "Canada",
-    scoreLocal: 5,
-    scoreAway: 1,
-    gamePlayed: true,
+    scoreLocal: 0,
+    scoreAway: 0,
+    gamePlayed: false,
   },
   {
     id: 19,

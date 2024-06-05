@@ -1,4 +1,4 @@
-const userPredictions = [
+export const userPredictions = [
   {
     user: "Resultados",
     totalPoints: 0,

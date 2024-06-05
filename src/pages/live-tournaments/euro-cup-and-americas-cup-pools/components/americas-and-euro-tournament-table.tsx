@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import userPredictions from "domain/data/games-fixture/users-prediction-list";
+import resultList from "domain/data/games-fixture/results-list";
 
 const countryLogos: any = {
   Argentina: process.env.PUBLIC_URL + "/soccer-logos/argentina.png",
@@ -47,9 +48,88 @@ const countryLogos: any = {
 };
 
 const AmericasAndEuroTournamentTable = () => {
-  const sortedPlayers = userPredictions.sort(
+  // const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
+  const getPoints = useCallback((match: any, result: any) => {
+    let points = 0;
+    const winnerMatch =
+      result.scoreLocal > result.scoreAway
+        ? "local"
+        : result.scoreLocal < result.scoreAway
+        ? "away"
+        : "tie";
+
+    const winnerPrediction =
+      match.scoreLocal > match.scoreAway
+        ? "local"
+        : match.scoreLocal < match.scoreAway
+        ? "away"
+        : "tie";
+
+    if (winnerMatch === winnerPrediction) points += 3;
+    if (match.scoreLocal === result.scoreLocal) points += 1;
+    if (match.scoreAway === result.scoreAway) points += 1;
+
+    const differenceMatch = Math.abs(result.scoreLocal - result.scoreAway);
+    const differencePrediction = Math.abs(match.scoreLocal - match.scoreAway);
+
+    if (differenceMatch === differencePrediction) points += 1;
+
+    return points;
+  }, []);
+
+  const updatedUserScoreList = userPredictions.map((userPrediction) => {
+    let totalPoints = 0;
+
+    const updatedMatchList = userPrediction.predictions.map((match) => {
+      const result = resultList.find(
+        (res) => res.id === match.id && res.gamePlayed
+      );
+
+      if (result) {
+        const points = getPoints(match, result);
+        totalPoints = totalPoints + points;
+
+        return {
+          ...match,
+          points: points,
+          gamePlayed: true,
+        };
+      }
+      return match;
+    });
+
+    const newObj = {
+      ...userPrediction,
+      totalPoints: totalPoints,
+      predictions: updatedMatchList,
+    };
+
+    return newObj;
+  });
+
+  const sortedPlayers = updatedUserScoreList.sort(
     (a, b) => b.totalPoints - a.totalPoints
   );
+
+  // const getColorBG = (points: number) => {
+  //   switch (points) {
+  //     case 6:
+  //       return "bg-green-500";
+  //     case 4:
+  //       return "bg-blue-700";
+  //     case 3:
+  //       return "bg-stone-300";
+  //     case 2:
+  //       return "bg-yellow-300";
+  //     case 1:
+  //       return "bg-orange-500";
+  //     case 0:
+  //       return "bg-red-700";
+  //     default:
+  //       return "";
+  //   }
+  // };
 
   return (
     <div className="overflow-x-auto bg-gray-800 text-white">
@@ -62,18 +142,37 @@ const AmericasAndEuroTournamentTable = () => {
             <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
               Puntos Totales
             </th>
-            {/* display if the game is already played */}
-            {/* {userPredictions[0].predictions.map((prediction, index) =>
+            {/* display if the game is already played this will display only played matches */}
+            {/* {resultList.map((prediction, index) =>
               prediction.gamePlayed ? (
                 <th
                   key={index}
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
                 >
-                  {prediction.localTeam} vs {prediction.awayTeam}
+                  <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center mb-2">
+                      <img
+                        src={countryLogos[prediction.localTeam]}
+                        alt={prediction.localTeam}
+                        className="w-6 h-6"
+                      />
+                      <span className="text-xs">{prediction.localTeam}</span>
+                    </div>
+                    <div className="text-xs">vs</div>
+                    <div className="flex flex-col items-center mt-2">
+                      <img
+                        src={countryLogos[prediction.awayTeam]}
+                        alt={prediction.awayTeam}
+                        className="w-6 h-6"
+                      />
+                      <span className="text-xs">{prediction.awayTeam}</span>
+                    </div>
+                  </div>
                 </th>
               ) : null
             )} */}
-            {userPredictions[0].predictions.map((prediction, index) => (
+            {/* this will display all matches */}
+            {resultList.map((prediction, index) => (
               <th
                 key={index}
                 className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
@@ -110,14 +209,34 @@ const AmericasAndEuroTournamentTable = () => {
               <td className="px-6 py-4 text-left whitespace-nowrap">
                 {player.totalPoints}
               </td>
-              {/* display if the game is already played */}
-              {/* {participante.predictions.map((prediction, idx) =>
+              {/* display if the game is already played this will display only played matches */}
+              {/* {player.predictions.map((prediction, idx) =>
                 prediction.gamePlayed ? (
-                  <td key={idx} className="px-6 py-4 whitespace-nowrap">
-                    {prediction.scoreLocal} - {prediction.scoreAway}
+                  <td
+                    key={idx}
+                    className={`px-6 py-4 whitespace-nowrap text-center`}
+                    onMouseEnter={() => setHoverIndex(idx)}
+                    onMouseLeave={() => setHoverIndex(null)}
+                  >
+                    {hoverIndex === idx ? (
+                      <span
+                        className={`px-6 py-4 whitespace-nowrap text-center text-black cursor-pointer ${
+                          hoverIndex === idx
+                            ? getColorBG(prediction.points)
+                            : ""
+                        }`}
+                      >
+                        {prediction.points}
+                      </span>
+                    ) : (
+                      <span>
+                        {prediction.scoreLocal} - {prediction.scoreAway}
+                      </span>
+                    )}
                   </td>
                 ) : null
               )} */}
+              {/* this will display all matches */}
               {player.predictions.map((player, index) => (
                 <td
                   key={index}

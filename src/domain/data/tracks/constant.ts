@@ -1150,13 +1150,3 @@ export const tracks2024 = [
     trackResults: [],
   },
 ];
-
-//Results Format
-//   {
-//     position: "1",
-//     driverFirstName: "Sebastian",
-//     driverLastName: "Viillamizar",
-//     driverTeam: "Ferrari",
-//     driverPoints: 25,
-//     fastestLap: false,
-//   },

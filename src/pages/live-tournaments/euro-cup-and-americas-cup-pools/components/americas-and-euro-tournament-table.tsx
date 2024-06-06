@@ -1,5 +1,4 @@
-import React, { useCallback } from "react";
-
+import React, { useCallback, useState } from "react";
 import userPredictions from "domain/data/games-fixture/users-prediction-list";
 import resultList from "domain/data/games-fixture/results-list";
 
@@ -48,7 +47,8 @@ const countryLogos: any = {
 };
 
 const AmericasAndEuroTournamentTable = () => {
-  // const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<any>(null);
+  const [showAllPoints, setShowAllPoints] = useState(false);
 
   const getPoints = useCallback((match: any, result: any) => {
     let points = 0;
@@ -112,137 +112,132 @@ const AmericasAndEuroTournamentTable = () => {
     (a, b) => b.totalPoints - a.totalPoints
   );
 
-  // const getColorBG = (points: number) => {
-  //   switch (points) {
-  //     case 6:
-  //       return "bg-green-500";
-  //     case 4:
-  //       return "bg-blue-700";
-  //     case 3:
-  //       return "bg-stone-300";
-  //     case 2:
-  //       return "bg-yellow-300";
-  //     case 1:
-  //       return "bg-orange-500";
-  //     case 0:
-  //       return "bg-red-700";
-  //     default:
-  //       return "";
-  //   }
-  // };
+  const getColorBG = (points: number) => {
+    switch (points) {
+      case 6:
+        return "bg-green-500";
+      case 4:
+        return "bg-blue-700";
+      case 3:
+        return "bg-stone-300";
+      case 2:
+        return "bg-yellow-300";
+      case 1:
+        return "bg-orange-500";
+      case 0:
+        return "bg-red-700";
+      default:
+        return "";
+    }
+  };
+
+  const getColorClass = (index: number, user: string) => {
+    if (user !== "Resultados") {
+      if (index === 1) return "gold text-yellow-600";
+      if (index === 2) return "silver text-gray-400";
+      if (index === 3) return "bronze text-orange-500";
+    }
+    return "";
+  };
 
   return (
-    <div className="overflow-x-auto bg-gray-800 text-white">
-      <table className="min-w-full divide-y divide-white">
-        <thead>
+    <div className="overflow-x-auto bg-gray-800 text-white p-4">
+      <div className="flex justify-center mb-4">
+        <label htmlFor="showAllPoints" className="flex items-center">
+          <input
+            type="checkbox"
+            id="showAllPoints"
+            checked={showAllPoints}
+            onChange={() => setShowAllPoints(!showAllPoints)}
+            className="mr-2"
+          />
+          Ver Puntos por juego
+        </label>
+      </div>
+      <table className="min-w-full divide-y divide-white text-sm">
+        <thead className="sticky top-0 bg-gray-800 z-10">
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-              Participante
-            </th>
-            <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
-              Puntos Totales
-            </th>
-            {/* display if the game is already played this will display only played matches */}
-            {/* {resultList.map((prediction, index) =>
-              prediction.gamePlayed ? (
-                <th
-                  key={index}
-                  className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="flex flex-col items-center mb-2">
-                      <img
-                        src={countryLogos[prediction.localTeam]}
-                        alt={prediction.localTeam}
-                        className="w-6 h-6"
-                      />
-                      <span className="text-xs">{prediction.localTeam}</span>
-                    </div>
-                    <div className="text-xs">vs</div>
-                    <div className="flex flex-col items-center mt-2">
-                      <img
-                        src={countryLogos[prediction.awayTeam]}
-                        alt={prediction.awayTeam}
-                        className="w-6 h-6"
-                      />
-                      <span className="text-xs">{prediction.awayTeam}</span>
-                    </div>
-                  </div>
-                </th>
-              ) : null
-            )} */}
-            {/* this will display all matches */}
-            {resultList.map((prediction, index) => (
+            <th className="px-4 py-3 font-medium uppercase tracking-wider"></th>
+            {sortedPlayers.map((player, index) => (
               <th
-                key={index}
-                className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
+                key={`player-${index}`}
+                className={`px-4 py-3 text-center font-medium uppercase tracking-wider ${getColorClass(
+                  index,
+                  player.user
+                )}`}
               >
-                <div className="flex flex-col items-center">
-                  <div className="flex flex-col items-center mb-2">
-                    <img
-                      src={countryLogos[prediction.localTeam]}
-                      alt={prediction.localTeam}
-                      className="w-6 h-6"
-                    />
-                    <span className="text-xs">{prediction.localTeam}</span>
-                  </div>
-                  <div className="text-xs">vs</div>
-                  <div className="flex flex-col items-center mt-2">
-                    <img
-                      src={countryLogos[prediction.awayTeam]}
-                      alt={prediction.awayTeam}
-                      className="w-6 h-6"
-                    />
-                    <span className="text-xs">{prediction.awayTeam}</span>
-                  </div>
-                </div>
+                {player.user}
+              </th>
+            ))}
+          </tr>
+          <tr>
+            <th className="px-4 py-3 font-medium uppercase tracking-wider">
+              Partidos
+            </th>
+            {sortedPlayers.map((player, index) => (
+              <th
+                key={`points-${index}`}
+                className={`px-4 py-3 text-center font-medium uppercase tracking-wider ${getColorClass(
+                  index,
+                  player.user
+                )}`}
+              >
+                {player.totalPoints} pts
               </th>
             ))}
           </tr>
         </thead>
         <tbody className="divide-y divide-white">
-          {sortedPlayers.map((player, index) => (
+          {/* Aqui debe ir la condicion para mostrar solo los juegos jugados */}
+          {resultList.map((prediction, index) => (
             <tr key={index}>
-              <td className="px-6 py-4 text-left whitespace-nowrap">
-                {player.user}
+              <td className="px-4 py-3 text-left whitespace-nowrap">
+                <div className="flex items-center justify-center">
+                  <div className="flex items-center mr-2">
+                    <img
+                      src={countryLogos[prediction.localTeam]}
+                      alt={prediction.localTeam}
+                      className="w-6 h-6"
+                    />
+                    <span className="ml-1">{prediction.localTeam}</span>
+                  </div>
+                  <span className="mx-2">vs</span>
+                  <div className="flex items-center ml-2">
+                    <img
+                      src={countryLogos[prediction.awayTeam]}
+                      alt={prediction.awayTeam}
+                      className="w-6 h-6"
+                    />
+                    <span className="ml-1">{prediction.awayTeam}</span>
+                  </div>
+                </div>
               </td>
-              <td className="px-6 py-4 text-left whitespace-nowrap">
-                {player.totalPoints}
-              </td>
-              {/* display if the game is already played this will display only played matches */}
-              {/* {player.predictions.map((prediction, idx) =>
-                prediction.gamePlayed ? (
-                  <td
-                    key={idx}
-                    className={`px-6 py-4 whitespace-nowrap text-center`}
-                    onMouseEnter={() => setHoverIndex(idx)}
-                    onMouseLeave={() => setHoverIndex(null)}
-                  >
-                    {hoverIndex === idx ? (
-                      <span
-                        className={`px-6 py-4 whitespace-nowrap text-center text-black cursor-pointer ${
-                          hoverIndex === idx
-                            ? getColorBG(prediction.points)
-                            : ""
-                        }`}
-                      >
-                        {prediction.points}
-                      </span>
-                    ) : (
-                      <span>
-                        {prediction.scoreLocal} - {prediction.scoreAway}
-                      </span>
-                    )}
-                  </td>
-                ) : null
-              )} */}
-              {/* this will display all matches */}
-              {player.predictions.map((player, index) => (
+              {sortedPlayers.map((player, playerIndex) => (
                 <td
-                  key={index}
-                  className="px-6 py-4 text-center whitespace-nowrap"
+                  key={playerIndex}
+                  className="px-4 py-3 text-center whitespace-nowrap"
+                  onMouseEnter={() =>
+                    setHoverIndex({ userIndex: playerIndex, matchIndex: index })
+                  }
+                  onMouseLeave={() => setHoverIndex(null)}
                 >
-                  {player.scoreLocal} - {player.scoreAway}
+                  {showAllPoints ||
+                  (hoverIndex &&
+                    hoverIndex.userIndex === playerIndex &&
+                    hoverIndex.matchIndex === index) ? (
+                    <span
+                      className={`px-6 py-4 whitespace-nowrap text-center text-black cursor-pointer ${getColorBG(
+                        player.predictions[index].points
+                      )} border shadow-md rounded-lg`}
+                    >
+                      {player.predictions[index].points} PTS
+                    </span>
+                  ) : (
+                    <span>
+                      {player.predictions[index].scoreLocal} -{" "}
+                      {player.predictions[index].scoreAway}
+                    </span>
+                  )}
                 </td>
               ))}
             </tr>

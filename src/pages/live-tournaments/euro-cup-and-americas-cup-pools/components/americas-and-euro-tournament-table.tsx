@@ -226,9 +226,9 @@ const AmericasAndEuroTournamentTable = () => {
                     hoverIndex.userIndex === playerIndex &&
                     hoverIndex.matchIndex === index) ? (
                     <span
-                      className={`px-6 py-4 whitespace-nowrap text-center text-black cursor-pointer ${getColorBG(
+                      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-4 cursor-pointer ${getColorBG(
                         player.predictions[index].points
-                      )} border shadow-md rounded-lg`}
+                      )}`}
                     >
                       {player.predictions[index].points} PTS
                     </span>

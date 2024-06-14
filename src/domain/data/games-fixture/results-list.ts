@@ -4,7 +4,7 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Alemania",
     awayTeam: "Escocia",
-    scoreLocal: 4,
+    scoreLocal: 5,
     scoreAway: 1,
     gamePlayed: true,
   },

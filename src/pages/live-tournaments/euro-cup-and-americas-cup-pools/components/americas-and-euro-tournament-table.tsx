@@ -189,65 +189,62 @@ const AmericasAndEuroTournamentTable = () => {
         </thead>
         <tbody className="divide-y divide-white">
           {/* Aqui debe ir la condicion para mostrar solo los juegos jugados */}
-          {resultList.map(
-            (prediction, index) =>
-              prediction.gamePlayed && (
-                <tr key={index}>
-                  <td className="px-4 py-3 text-left whitespace-nowrap">
-                    <div className="flex items-center justify-center">
-                      <div className="flex items-center mr-2">
-                        <img
-                          src={countryLogos[prediction.localTeam]}
-                          alt={prediction.localTeam}
-                          className="w-6 h-6"
-                        />
-                        <span className="ml-1">{prediction.localTeam}</span>
-                      </div>
-                      <span className="mx-2">vs</span>
-                      <div className="flex items-center ml-2">
-                        <img
-                          src={countryLogos[prediction.awayTeam]}
-                          alt={prediction.awayTeam}
-                          className="w-6 h-6"
-                        />
-                        <span className="ml-1">{prediction.awayTeam}</span>
-                      </div>
-                    </div>
-                  </td>
-                  {sortedPlayers.map((player, playerIndex) => (
-                    <td
-                      key={playerIndex}
-                      className="px-4 py-3 text-center whitespace-nowrap"
-                      onMouseEnter={() =>
-                        setHoverIndex({
-                          userIndex: playerIndex,
-                          matchIndex: index,
-                        })
-                      }
-                      onMouseLeave={() => setHoverIndex(null)}
+          {resultList.map((prediction, index) => (
+            <tr key={index}>
+              <td className="px-4 py-3 text-left whitespace-nowrap">
+                <div className="flex items-center justify-center">
+                  <div className="flex items-center mr-2">
+                    <img
+                      src={countryLogos[prediction.localTeam]}
+                      alt={prediction.localTeam}
+                      className="w-6 h-6"
+                    />
+                    <span className="ml-1">{prediction.localTeam}</span>
+                  </div>
+                  <span className="mx-2">vs</span>
+                  <div className="flex items-center ml-2">
+                    <img
+                      src={countryLogos[prediction.awayTeam]}
+                      alt={prediction.awayTeam}
+                      className="w-6 h-6"
+                    />
+                    <span className="ml-1">{prediction.awayTeam}</span>
+                  </div>
+                </div>
+              </td>
+              {sortedPlayers.map((player, playerIndex) => (
+                <td
+                  key={playerIndex}
+                  className="px-4 py-3 text-center whitespace-nowrap"
+                  onMouseEnter={() =>
+                    setHoverIndex({
+                      userIndex: playerIndex,
+                      matchIndex: index,
+                    })
+                  }
+                  onMouseLeave={() => setHoverIndex(null)}
+                >
+                  {showAllPoints ||
+                  (hoverIndex &&
+                    hoverIndex.userIndex === playerIndex &&
+                    hoverIndex.matchIndex === index) ? (
+                    <span
+                      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-4 cursor-pointer ${getColorBG(
+                        player.predictions[index].points
+                      )}`}
                     >
-                      {showAllPoints ||
-                      (hoverIndex &&
-                        hoverIndex.userIndex === playerIndex &&
-                        hoverIndex.matchIndex === index) ? (
-                        <span
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-4 cursor-pointer ${getColorBG(
-                            player.predictions[index].points
-                          )}`}
-                        >
-                          {player.predictions[index].points} PTS
-                        </span>
-                      ) : (
-                        <span>
-                          {player.predictions[index].scoreLocal} -{" "}
-                          {player.predictions[index].scoreAway}
-                        </span>
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              )
-          )}
+                      {player.predictions[index].points} PTS
+                    </span>
+                  ) : (
+                    <span>
+                      {player.predictions[index].scoreLocal} -{" "}
+                      {player.predictions[index].scoreAway}
+                    </span>
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

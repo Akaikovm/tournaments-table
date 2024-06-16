@@ -49,9 +49,9 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Eslovenia",
     awayTeam: "Dinamarca",
-    scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreLocal: 1,
+    scoreAway: 1,
+    gamePlayed: true,
   },
   {
     id: 6,
@@ -59,8 +59,8 @@ export const resultList = [
     localTeam: "Serbia",
     awayTeam: "Inglaterra",
     scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreAway: 1,
+    gamePlayed: true,
   },
   {
     id: 7,

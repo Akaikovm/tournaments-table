@@ -86,8 +86,8 @@ export const resultList = [
     localTeam: "Austria",
     awayTeam: "Francia",
     scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreAway: 1,
+    gamePlayed: true,
   },
   {
     id: 10,

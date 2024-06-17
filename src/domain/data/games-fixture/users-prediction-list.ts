@@ -99,9 +99,9 @@ export const userPredictions = [
         localTeam: "Austria",
         awayTeam: "Francia",
         scoreLocal: 0,
-        scoreAway: 0,
+        scoreAway: 1,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 10,

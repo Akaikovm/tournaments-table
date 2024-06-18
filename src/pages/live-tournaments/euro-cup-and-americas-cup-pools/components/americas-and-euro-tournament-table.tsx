@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import userPredictions from "domain/data/games-fixture/users-prediction-list";
 import resultList from "domain/data/games-fixture/results-list";
 
@@ -49,6 +49,7 @@ const countryLogos: any = {
 const AmericasAndEuroTournamentTable = () => {
   const [hoverIndex, setHoverIndex] = useState<any>(null);
   const [showAllPoints, setShowAllPoints] = useState(false);
+  const [filteredResults, setFilteredResults] = useState<any>([]);
 
   const getPoints = useCallback((match: any, result: any) => {
     let points = 0;
@@ -140,6 +141,17 @@ const AmericasAndEuroTournamentTable = () => {
     return "";
   };
 
+  useEffect(() => {
+    const today = new Date();
+
+    const filtered = resultList.filter((match) => {
+      const matchDate = new Date(match.date);
+      return matchDate <= today;
+    });
+
+    setFilteredResults(filtered);
+  }, []);
+
   return (
     <div className="overflow-x-auto bg-gray-800 text-white p-4">
       <div className="flex justify-center mb-4">
@@ -189,7 +201,7 @@ const AmericasAndEuroTournamentTable = () => {
         </thead>
         <tbody className="divide-y divide-white">
           {/* Aqui debe ir la condicion para mostrar solo los juegos jugados */}
-          {resultList.map((prediction, index) => (
+          {filteredResults.map((prediction: any, index: number) => (
             <tr key={index}>
               <td className="px-4 py-3 text-left whitespace-nowrap">
                 <div className="flex items-center justify-center">

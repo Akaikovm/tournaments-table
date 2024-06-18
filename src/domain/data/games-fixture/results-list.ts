@@ -7,6 +7,7 @@ export const resultList = [
     scoreLocal: 5,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-14T14:00:00",
   },
   {
     id: 1,
@@ -16,6 +17,7 @@ export const resultList = [
     scoreLocal: 1,
     scoreAway: 3,
     gamePlayed: true,
+    date: "2024-06-15T08:00:00",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ export const resultList = [
     scoreLocal: 3,
     scoreAway: 0,
     gamePlayed: true,
+    date: "2024-06-15T11:00:00",
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ export const resultList = [
     scoreLocal: 2,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-15T14:00:00",
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ export const resultList = [
     scoreLocal: 1,
     scoreAway: 2,
     gamePlayed: true,
+    date: "2024-06-16T08:00:00",
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ export const resultList = [
     scoreLocal: 1,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-16T11:00:00",
   },
   {
     id: 6,
@@ -61,6 +67,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-16T14:00:00",
   },
   {
     id: 7,
@@ -70,6 +77,7 @@ export const resultList = [
     scoreLocal: 3,
     scoreAway: 0,
     gamePlayed: true,
+    date: "2024-06-17T08:00:00",
   },
   {
     id: 8,
@@ -79,6 +87,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-17T11:00:00",
   },
   {
     id: 9,
@@ -88,6 +97,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-17T14:00:00",
   },
   {
     id: 10,
@@ -97,6 +107,7 @@ export const resultList = [
     scoreLocal: 3,
     scoreAway: 1,
     gamePlayed: true,
+    date: "2024-06-18T11:00:00",
   },
   {
     id: 11,
@@ -106,6 +117,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-18T14:00:00",
   },
   {
     id: 12,
@@ -115,6 +127,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-19T08:00:00",
   },
   {
     id: 13,
@@ -124,6 +137,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-19T11:00:00",
   },
   {
     id: 14,
@@ -133,6 +147,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-19T14:00:00",
   },
   {
     id: 15,
@@ -142,6 +157,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-20T08:00:00",
   },
   {
     id: 16,
@@ -151,6 +167,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-20T11:00:00",
   },
   {
     id: 17,
@@ -160,6 +177,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-20T14:00:00",
   },
   {
     id: 18,
@@ -169,6 +187,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-20T19:00:00",
   },
   {
     id: 19,
@@ -178,6 +197,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-21T08:00:00",
   },
   {
     id: 20,
@@ -187,6 +207,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-21T11:00:00",
   },
   {
     id: 21,
@@ -196,6 +217,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-21T14:00:00",
   },
   {
     id: 22,
@@ -205,6 +227,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-21T19:00:00",
   },
   {
     id: 23,
@@ -214,6 +237,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-22T08:00:00",
   },
   {
     id: 24,
@@ -223,6 +247,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-22T11:00:00",
   },
   {
     id: 25,
@@ -232,6 +257,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-22T14:00:00",
   },
   {
     id: 26,
@@ -241,6 +267,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-22T17:00:00",
   },
   {
     id: 27,
@@ -250,6 +277,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-22T20:00:00",
   },
   {
     id: 28,
@@ -259,6 +287,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-23T14:00:00",
   },
   {
     id: 29,
@@ -268,6 +297,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-23T14:00:00",
   },
   {
     id: 30,
@@ -277,6 +307,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-23T17:00:00",
   },
   {
     id: 31,
@@ -286,6 +317,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-23T20:00:00",
   },
   {
     id: 32,
@@ -295,6 +327,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-24T14:00:00",
   },
   {
     id: 33,
@@ -304,6 +337,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-24T14:00:00",
   },
   {
     id: 34,
@@ -313,6 +347,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-24T17:00:00",
   },
   {
     id: 35,
@@ -322,6 +357,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-24T18:00:00",
   },
   {
     id: 36,
@@ -331,6 +367,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T11:00:00",
   },
   {
     id: 37,
@@ -340,6 +377,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T11:00:00",
   },
   {
     id: 38,
@@ -349,6 +387,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T14:00:00",
   },
   {
     id: 39,
@@ -358,6 +397,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T14:00:00",
   },
   {
     id: 40,
@@ -367,6 +407,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T17:00:00",
   },
   {
     id: 41,
@@ -376,6 +417,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-25T20:00:00",
   },
   {
     id: 42,
@@ -385,6 +427,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T11:00:00",
   },
   {
     id: 43,
@@ -394,6 +437,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T11:00:00",
   },
   {
     id: 44,
@@ -403,6 +447,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T14:00:00",
   },
   {
     id: 45,
@@ -412,6 +457,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T14:00:00",
   },
   {
     id: 46,
@@ -421,6 +467,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T17:00:00",
   },
   {
     id: 47,
@@ -430,6 +477,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-26T20:00:00",
   },
   {
     id: 48,
@@ -439,6 +487,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-27T17:00:00",
   },
   {
     id: 49,
@@ -448,6 +497,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-27T20:00:00",
   },
   {
     id: 50,
@@ -457,6 +507,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-28T17:00:00",
   },
   {
     id: 51,
@@ -466,6 +517,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-28T20:00:00",
   },
   {
     id: 52,
@@ -475,6 +527,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-29T19:00:00",
   },
   {
     id: 53,
@@ -484,6 +537,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-29T19:00:00",
   },
   {
     id: 54,
@@ -493,6 +547,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-30T19:00:00",
   },
   {
     id: 55,
@@ -502,6 +557,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-06-30T19:00:00",
   },
   {
     id: 56,
@@ -511,6 +567,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-07-01T20:00:00",
   },
   {
     id: 57,
@@ -520,6 +577,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-07-01T20:00:00",
   },
   {
     id: 58,
@@ -529,6 +587,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-07-02T20:00:00",
   },
   {
     id: 59,
@@ -538,6 +597,7 @@ export const resultList = [
     scoreLocal: 0,
     scoreAway: 0,
     gamePlayed: false,
+    date: "2024-07-02T20:00:00",
   },
 ];
 export default resultList;

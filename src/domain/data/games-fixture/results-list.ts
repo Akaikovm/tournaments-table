@@ -94,9 +94,9 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Turquia",
     awayTeam: "Georgia",
-    scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreLocal: 3,
+    scoreAway: 1,
+    gamePlayed: true,
   },
   {
     id: 11,

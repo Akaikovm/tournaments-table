@@ -167,7 +167,7 @@ const AmericasAndEuroTournamentTable = () => {
         </label>
       </div>
       <table className="min-w-full divide-y divide-white text-sm">
-        <thead className="sticky top-0 bg-gray-800 z-10">
+        <thead className="sticky top-0 bg-gray-800">
           <tr>
             <th className="px-4 py-3 font-medium uppercase tracking-wider"></th>
             {sortedPlayers.map((player, index) => (

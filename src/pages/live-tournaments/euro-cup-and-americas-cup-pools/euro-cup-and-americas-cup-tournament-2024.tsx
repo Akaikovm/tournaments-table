@@ -11,7 +11,7 @@ import Pool from "./components/pool";
 import AmericasAndEuroTournamentTable from "./components/americas-and-euro-tournament-table";
 
 const EuroCupAndAmericasCupTournament2024 = () => {
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -28,7 +28,7 @@ const EuroCupAndAmericasCupTournament2024 = () => {
         <TitleBar title="Quiniela Copa America / Eurocopa 2024" />
       </div>
       {/* Desktop tabs */}
-      <Tabs id="custom-animation" value="quiniela" className="hidden md:block">
+      <Tabs id="custom-animation" value="resultados" className="hidden md:block">
         <TabsHeader
           className="text-red-700 cursor-pointer bg-gray-800 z-0"
           indicatorProps={{

@@ -39,7 +39,7 @@ function App() {
         <ToastProvider placement="bottom-left" autoDismissTimeout={5000}>
           <Provider>
             <Helmet defaultTitle="PGG's Tournament Series" />
-            <Router>
+            <Router basename="/tournaments-table">
               <Navbar />
               <Routes>
                 <Route path="/" element={<Home />} />

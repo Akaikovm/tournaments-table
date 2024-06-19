@@ -128,10 +128,10 @@ export const userPredictions = [
         tournament: "euro",
         localTeam: "Croacia",
         awayTeam: "Albania",
-        scoreLocal: 0,
-        scoreAway: 0,
+        scoreLocal: 2,
+        scoreAway: 2,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 13,

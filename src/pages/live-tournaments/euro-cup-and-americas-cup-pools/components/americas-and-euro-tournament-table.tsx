@@ -50,6 +50,7 @@ const AmericasAndEuroTournamentTable = () => {
   const [hoverIndex, setHoverIndex] = useState<any>(null);
   const [showAllPoints, setShowAllPoints] = useState(false);
   const [filteredResults, setFilteredResults] = useState<any>([]);
+  const [filterDate, setFilterDate] = useState<boolean>(false);
 
   const getPoints = useCallback((match: any, result: any) => {
     let points = 0;
@@ -141,30 +142,54 @@ const AmericasAndEuroTournamentTable = () => {
     return "";
   };
 
+  const getOnlyDate = (date: Date) => {
+    return new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate()
+    ).getTime();
+  };
+
   useEffect(() => {
-    const today = new Date();
+    let filteredResults = resultList;
+    if (filterDate) {
+      const today = new Date();
+      filteredResults = resultList.filter((match) => {
+        const matchDate = new Date(match.date);
+        return getOnlyDate(matchDate) === getOnlyDate(today);
+      });
+    }
 
-    const filtered = resultList.filter((match) => {
-      const matchDate = new Date(match.date);
-      return matchDate <= today;
-    });
-
-    setFilteredResults(filtered);
-  }, []);
+    setFilteredResults(filteredResults);
+  }, [filterDate]);
 
   return (
     <div className="overflow-x-auto bg-gray-800 text-white p-4">
-      <div className="flex justify-center mb-4">
-        <label htmlFor="showAllPoints" className="flex items-center">
-          <input
-            type="checkbox"
-            id="showAllPoints"
-            checked={showAllPoints}
-            onChange={() => setShowAllPoints(!showAllPoints)}
-            className="mr-2"
-          />
-          Ver Puntos por juego
-        </label>
+      <div className="flex justify-center">
+        <div className="flex justify-center mb-4 m-auto">
+          <label htmlFor="showAllPoints" className="flex items-center">
+            <input
+              type="checkbox"
+              id="showAllPoints"
+              checked={showAllPoints}
+              onChange={() => setShowAllPoints(!showAllPoints)}
+              className="mr-2"
+            />
+            Ver Puntos por juego
+          </label>
+        </div>
+        <div className="flex justify-center mb-4 m-auto">
+          <label htmlFor="filterDate" className="flex items-center">
+            <input
+              type="checkbox"
+              id="filterDate"
+              checked={filterDate}
+              onChange={() => setFilterDate(!filterDate)}
+              className="mr-2"
+            />
+            Juegos de hoy
+          </label>
+        </div>
       </div>
       <table className="min-w-full divide-y divide-white text-sm">
         <thead className="sticky top-0 bg-gray-800">
@@ -224,37 +249,43 @@ const AmericasAndEuroTournamentTable = () => {
                   </div>
                 </div>
               </td>
-              {sortedPlayers.map((player, playerIndex) => (
-                <td
-                  key={playerIndex}
-                  className="px-4 py-3 text-center whitespace-nowrap"
-                  onMouseEnter={() =>
-                    setHoverIndex({
-                      userIndex: playerIndex,
-                      matchIndex: index,
-                    })
-                  }
-                  onMouseLeave={() => setHoverIndex(null)}
-                >
-                  {showAllPoints ||
-                  (hoverIndex &&
-                    hoverIndex.userIndex === playerIndex &&
-                    hoverIndex.matchIndex === index) ? (
-                    <span
-                      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-4 cursor-pointer ${getColorBG(
-                        player.predictions[index].points
-                      )}`}
-                    >
-                      {player.predictions[index].points} PTS
-                    </span>
-                  ) : (
-                    <span>
-                      {player.predictions[index].scoreLocal} -{" "}
-                      {player.predictions[index].scoreAway}
-                    </span>
-                  )}
-                </td>
-              ))}
+              {sortedPlayers.map((player, playerIndex) => {
+                const playerMatch = player.predictions.find(
+                  (pred) => pred.id === prediction.id
+                );
+                return (
+                  <td
+                    key={playerIndex}
+                    className="px-4 py-3 text-center whitespace-nowrap"
+                    onMouseEnter={() =>
+                      setHoverIndex({
+                        userIndex: playerIndex,
+                        matchIndex: index,
+                      })
+                    }
+                    onMouseLeave={() => setHoverIndex(null)}
+                  >
+                    {playerMatch ? (
+                      showAllPoints ||
+                      (hoverIndex &&
+                        hoverIndex.userIndex === playerIndex &&
+                        hoverIndex.matchIndex === index) ? (
+                        <span
+                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium leading-4 cursor-pointer ${getColorBG(
+                            playerMatch.points
+                          )}`}
+                        >
+                          {playerMatch.points} PTS
+                        </span>
+                      ) : (
+                        <span>
+                          {playerMatch.scoreLocal} - {playerMatch.scoreAway}
+                        </span>
+                      )
+                    ) : null}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

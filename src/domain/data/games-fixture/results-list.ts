@@ -216,7 +216,7 @@ export const resultList = [
     awayTeam: "Francia",
     scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-21T14:00:00",
   },
   {

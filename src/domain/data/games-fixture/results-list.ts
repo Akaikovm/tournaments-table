@@ -204,9 +204,9 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Polonia",
     awayTeam: "Austria",
-    scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreLocal: 1,
+    scoreAway: 3,
+    gamePlayed: true,
     date: "2024-06-21T11:00:00",
   },
   {

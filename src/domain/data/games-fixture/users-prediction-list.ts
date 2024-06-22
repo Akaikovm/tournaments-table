@@ -231,7 +231,7 @@ export const userPredictions = [
         scoreLocal: 0,
         scoreAway: 0,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 23,

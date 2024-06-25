@@ -348,10 +348,10 @@ export const userPredictions = [
         tournament: "america",
         localTeam: "Colombia",
         awayTeam: "Paraguay",
-        scoreLocal: 0,
-        scoreAway: 0,
+        scoreLocal: 2,
+        scoreAway: 1,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 35,
@@ -361,7 +361,7 @@ export const userPredictions = [
         scoreLocal: 0,
         scoreAway: 0,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 36,

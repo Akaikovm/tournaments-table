@@ -364,9 +364,9 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Paises Bajos",
     awayTeam: "Austria",
-    scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreLocal: 2,
+    scoreAway: 3,
+    gamePlayed: true,
     date: "2024-06-25T11:00:00",
   },
   {
@@ -374,9 +374,9 @@ export const resultList = [
     tournament: "euro",
     localTeam: "Francia",
     awayTeam: "Polonia",
-    scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreLocal: 1,
+    scoreAway: 1,
+    gamePlayed: true,
     date: "2024-06-25T11:00:00",
   },
   {
@@ -386,7 +386,7 @@ export const resultList = [
     awayTeam: "Eslovenia",
     scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-25T14:00:00",
   },
   {
@@ -396,7 +396,7 @@ export const resultList = [
     awayTeam: "Serbia",
     scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-25T14:00:00",
   },
   {

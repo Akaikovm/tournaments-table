@@ -409,9 +409,9 @@ export const userPredictions = [
         localTeam: "Peru",
         awayTeam: "Canada",
         scoreLocal: 0,
-        scoreAway: 0,
+        scoreAway: 1,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 41,
@@ -419,9 +419,9 @@ export const userPredictions = [
         localTeam: "Chile",
         awayTeam: "Argentina",
         scoreLocal: 0,
-        scoreAway: 0,
+        scoreAway: 1,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 42,

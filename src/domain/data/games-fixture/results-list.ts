@@ -524,9 +524,9 @@ export const resultList = [
     tournament: "america",
     localTeam: "Argentina",
     awayTeam: "Peru",
-    scoreLocal: 0,
+    scoreLocal: 2,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-29T19:00:00",
   },
   {
@@ -536,7 +536,7 @@ export const resultList = [
     awayTeam: "Chile",
     scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-29T19:00:00",
   },
   {

@@ -549,9 +549,9 @@ export const userPredictions = [
         localTeam: "Jamaica",
         awayTeam: "Venezuela",
         scoreLocal: 0,
-        scoreAway: 0,
+        scoreAway: 3,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 55,
@@ -561,7 +561,7 @@ export const userPredictions = [
         scoreLocal: 0,
         scoreAway: 0,
         points: 0,
-        gamePlayed: false,
+        gamePlayed: true,
       },
       {
         id: 56,

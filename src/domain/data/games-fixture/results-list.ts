@@ -545,8 +545,8 @@ export const resultList = [
     localTeam: "Jamaica",
     awayTeam: "Venezuela",
     scoreLocal: 0,
-    scoreAway: 0,
-    gamePlayed: false,
+    scoreAway: 3,
+    gamePlayed: true,
     date: "2024-06-30T19:00:00",
   },
   {
@@ -556,7 +556,7 @@ export const resultList = [
     awayTeam: "Ecuador",
     scoreLocal: 0,
     scoreAway: 0,
-    gamePlayed: false,
+    gamePlayed: true,
     date: "2024-06-30T19:00:00",
   },
   {

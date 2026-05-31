@@ -1,123 +1,97 @@
-import React from 'react';
-import colors from 'tailwindcss/colors';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledRing = styled.div`
-  .lds-ring {
-    display: inline-block;
+  .ring {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
   }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
+  .ring::before,
+  .ring::after {
+    content: "";
     position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${colors.indigo[700]} transparent transparent transparent;
+    inset: 0;
+    border-radius: 999px;
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
+  .ring::before {
+    background: conic-gradient(
+      from 0deg,
+      rgba(99, 102, 241, 0),
+      #6366f1,
+      #8b5cf6,
+      #22d3ee,
+      rgba(99, 102, 241, 0)
+    );
+    animation: spin 1.1s linear infinite;
+    -webkit-mask: radial-gradient(
+      circle at center,
+      transparent 18px,
+      black 19px
+    );
+    mask: radial-gradient(circle at center, transparent 18px, black 19px);
   }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
+  .ring::after {
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-mask: radial-gradient(
+      circle at center,
+      transparent 18px,
+      black 19px
+    );
+    mask: radial-gradient(circle at center, transparent 18px, black 19px);
   }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
+  @keyframes spin {
+    to {
       transform: rotate(360deg);
     }
   }
 `;
-export const Ring = () => {
-  return (
-    <StyledRing>
-      <div className="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </StyledRing>
-  );
-};
+export const Ring = () => (
+  <StyledRing>
+    <div className="ring" />
+  </StyledRing>
+);
 
-export const Elipsis = () => {
-  const Styles = styled.div`
-    .lds-ellipsis {
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 80px;
+const StyledEllipsis = styled.div`
+  .dots {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    animation: bounce 0.9s ease-in-out infinite;
+  }
+  .dots span:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .dots span:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  @keyframes bounce {
+    0%,
+    80%,
+    100% {
+      transform: scale(0.6);
+      opacity: 0.5;
     }
-    .lds-ellipsis div {
-      position: absolute;
-      top: 33px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: #fff;
-      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    40% {
+      transform: scale(1);
+      opacity: 1;
     }
-    .lds-ellipsis div:nth-child(1) {
-      left: 8px;
-      animation: lds-ellipsis1 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(2) {
-      left: 8px;
-      animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(3) {
-      left: 32px;
-      animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(4) {
-      left: 56px;
-      animation: lds-ellipsis3 0.6s infinite;
-    }
-    @keyframes lds-ellipsis1 {
-      0% {
-        transform: scale(0);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    @keyframes lds-ellipsis3 {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0);
-      }
-    }
-    @keyframes lds-ellipsis2 {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(24px, 0);
-      }
-    }
-  `;
-  return (
-    <Styles>
-      <div className="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </Styles>
-  );
-};
+  }
+`;
+export const Elipsis = () => (
+  <StyledEllipsis>
+    <div className="dots">
+      <span />
+      <span />
+      <span />
+    </div>
+  </StyledEllipsis>
+);

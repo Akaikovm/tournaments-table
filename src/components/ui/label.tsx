@@ -21,16 +21,16 @@ export const Label = React.forwardRef<Ref, LabelProps>(function Label(
   }: LabelProps,
   ref
 ) {
-  const base = `block text-sm text-gray-900`;
+  const base = "block text-xs uppercase tracking-[0.12em] text-white/70";
 
   const spacingStyle: { [key: string]: string } = {
-    tight: `mb-0`,
-    normal: `mb-2`,
+    tight: "mb-1",
+    normal: "mb-2",
   };
 
   const fontStyle: { [key: string]: string } = {
-    normal: `font-normal`,
-    semibold: `font-semibold`,
+    normal: "font-medium",
+    semibold: "font-semibold",
   };
 
   return (
@@ -38,7 +38,7 @@ export const Label = React.forwardRef<Ref, LabelProps>(function Label(
       ref={ref}
       className={calculateClassName([
         base,
-        spacingStyle,
+        spacingStyle[spacing ?? "normal"],
         fontStyle[font],
         className,
       ])}
@@ -46,7 +46,7 @@ export const Label = React.forwardRef<Ref, LabelProps>(function Label(
     >
       {children}
       {optional && (
-        <span className="ml-1 text-xxs text-gray-400 leading-none">
+        <span className="ml-2 text-[10px] tracking-wide text-white/30">
           OPTIONAL
         </span>
       )}

@@ -43,10 +43,26 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
   const tournamentID = tournamentSelected?.toString();
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <ModalContent>
         <ModalHeader>
-          <div className="absolute top-0 right-0 pt-4 pr-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-gradient shadow-[0_8px_24px_rgba(245,158,11,0.45)]">
+                <AiTwotoneSnippets size={20} className="text-white" />
+              </div>
+              <div>
+                <h3
+                  className="text-lg sm:text-xl font-display font-bold text-white"
+                  id="modal-headline"
+                >
+                  Detalles del Torneo
+                </h3>
+                <p className="text-xs text-white/50">
+                  Visualiza o elimina el torneo seleccionado
+                </p>
+              </div>
+            </div>
             <CloseButton onClick={onClose} />
           </div>
         </ModalHeader>
@@ -65,82 +81,69 @@ export function TournamentDetailsModal(props: TournamentDetailsModalProps) {
             );
           }}
         >
-          <ModalBody>
-            <div>
-              <div className="flex items-center justify-center w-12 h-12 mx-auto bg-indigo-100 rounded-full">
-                <AiTwotoneSnippets size={20} />
-              </div>
-              <div className="mt-3 sm:mt-5">
-                <h3
-                  className="text-lg text-center font-medium text-gray-900 leading-6"
-                  id="modal-headline"
-                >
-                  Detalles del Torneo
-                </h3>
-                <div className="mt-6">
-                  <p className="text-center">
-                    Aqui podras ver detalles del torneo seleccionado o
-                    eliminarlo
-                  </p>
-                </div>
-                <div className="mt-8">
-                  {tournamentDetail?.selectedRows?.length ? (
-                    <div>
-                      {tournamentDetail.selectedRows.map((tournament: any) => {
-                        return (
-                          <div key={tournament.id}>
-                            <ul>
-                              <li>
-                                <span>{`Fecha: ${tournament.date}`}</span>
-                              </li>
-                              <li>
-                                <span>{`Juego: ${tournament.game}`}</span>
-                              </li>
-                              <li>
-                                <span>{`Campeon: ${tournament.champion}`}</span>
-                              </li>
-                              <li>
-                                <span>{`Tier: ${tournament.tier}`}</span>
-                              </li>
-                            </ul>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <div className="mt-8">
-                      <span className="text-sm font-semibold text-red-700">
-                        No hay Detalles de Torneo
+          <ModalBody className="mt-6">
+            {tournamentDetail?.selectedRows?.length ? (
+              <div className="space-y-3">
+                {tournamentDetail.selectedRows.map((tournament: any) => (
+                  <div
+                    key={tournament.id}
+                    className="rounded-2xl bg-white/[0.04] border border-white/10 p-4 sm:p-5"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-display font-semibold text-white">
+                        {tournament.game}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-brand-500/15 border border-brand-400/30 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-brand-200 font-semibold">
+                        Tier {tournament.tier}
                       </span>
                     </div>
-                  )}
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wider text-white/40">
+                          Fecha
+                        </div>
+                        <div className="text-white/85">{tournament.date}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wider text-white/40">
+                          Campeon
+                        </div>
+                        <div className="text-white/85">
+                          {tournament.champion}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-6 text-center">
+                <div className="text-sm text-white/60">
+                  Selecciona un torneo para ver sus detalles
                 </div>
               </div>
-            </div>
+            )}
           </ModalBody>
           <ModalFooter>
-            <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-              <span className="flex w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:col-start-2">
-                <Button
-                  type="submit"
-                  variant="danger"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  loading={isLoadingDelete}
-                >
-                  Eliminar
-                </Button>
-              </span>
-
-              <span className="flex w-full rounded-md shadow-sm sm:col-start-1">
-                <Button
-                  type="button"
-                  variant="primary"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  onClick={routeChange}
-                >
-                  Ver Detalles
-                </Button>
-              </span>
+            <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3">
+              <Button
+                type="submit"
+                variant="danger"
+                fullWidth
+                loading={isLoadingDelete}
+                className="sm:w-auto"
+              >
+                Eliminar
+              </Button>
+              <Button
+                type="button"
+                variant="primary"
+                fullWidth
+                onClick={routeChange}
+                className="sm:w-auto"
+              >
+                Ver Detalles
+              </Button>
             </div>
           </ModalFooter>
         </form>

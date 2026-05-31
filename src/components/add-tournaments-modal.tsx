@@ -9,7 +9,6 @@ import {
   ModalFooter,
   ModalHeader,
 } from "./ui/modal/modal";
-import { FormGroup, FormInline } from "./ui/modal/form-ui";
 import { Label } from "./ui/label";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { Input } from "./ui/input";
@@ -96,179 +95,174 @@ export function AddTournamentsModal(props: TournamentDetailsModalProps) {
   }, [isOpen, reset]);
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <ModalContent>
         <ModalHeader>
-          <div className="absolute top-0 right-0 pt-4 pr-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-gradient shadow-[0_8px_24px_rgba(245,158,11,0.45)]">
+                <AiFillFileAdd size={20} className="text-white" />
+              </div>
+              <div>
+                <h3
+                  className="text-lg sm:text-xl font-display font-bold text-white"
+                  id="modal-headline"
+                >
+                  Añadir Torneo
+                </h3>
+                <p className="text-xs text-white/50">
+                  Registra un nuevo torneo en la serie
+                </p>
+              </div>
+            </div>
             <CloseButton onClick={onClose} />
           </div>
         </ModalHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <ModalBody>
+          <ModalBody className="mt-6 space-y-5">
             <div>
+              <Label htmlFor="platform">Plataforma</Label>
+              <Controller
+                name="platform"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    disabled={false}
+                    {...field}
+                    id="platform"
+                    options={platformOptions}
+                    isSearchable
+                    placeholder="Selecciona plataforma..."
+                    error={errors.platform}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <div className="flex items-center justify-center w-12 h-12 mx-auto bg-indigo-100 rounded-full">
-                  <AiFillFileAdd size={20} />
-                </div>
-                <div className="mt-3 sm:mt-5">
-                  <h3
-                    className="text-lg text-center font-medium text-gray-900 leading-6"
-                    id="modal-headline"
-                  >
-                    Añadir Torneo
-                  </h3>
-                </div>
+                <Label htmlFor="date">Fecha</Label>
+                <Input
+                  type="text"
+                  id="date"
+                  placeholder="DD/MM/YYYY"
+                  {...register("date", { required: true })}
+                />
               </div>
-              <div className="space-y-6">
-                <FormGroup className="block md:inline-block mt-4 w-full">
-                  <Label htmlFor="platform">Plataforma</Label>
-                  <div className="mr-3 mt-3">
-                    <Controller
-                      name="platform"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          disabled={false}
-                          {...field}
-                          id="platform"
-                          options={platformOptions}
-                          isSearchable
-                          error={errors.platform}
-                        />
-                      )}
+              <div>
+                <Label htmlFor="season">Season</Label>
+                <Input
+                  type="number"
+                  id="season"
+                  placeholder="2024"
+                  {...register("season", { required: true })}
+                />
+              </div>
+            </div>
+
+            <div>
+              <Label htmlFor="game">Juego</Label>
+              <Input
+                type="text"
+                id="game"
+                placeholder="Ej: FIFA, NBA 2K..."
+                {...register("game", { required: true })}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="champion">Campeon</Label>
+                <Input
+                  type="text"
+                  id="champion"
+                  placeholder="Nombre del campeon"
+                  {...register("champion", { required: true })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="championTeam">Equipo Campeon</Label>
+                <Input
+                  type="text"
+                  id="championTeam"
+                  placeholder="Equipo"
+                  {...register("championTeam", { required: true })}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="runnerUp">Subcampeon</Label>
+                <Input
+                  type="text"
+                  id="runnerUp"
+                  placeholder="Nombre del subcampeon"
+                  {...register("runnerUp", { required: true })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="runnerUpTeam">Equipo Subcampeon</Label>
+                <Input
+                  type="text"
+                  id="runnerUpTeam"
+                  placeholder="Equipo"
+                  {...register("runnerUpTeam", { required: true })}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="players">Jugadores</Label>
+                <Input
+                  type="number"
+                  id="players"
+                  placeholder="Cantidad"
+                  {...register("players", { required: true })}
+                />
+              </div>
+              <div>
+                <Label htmlFor="tier">Tier</Label>
+                <Controller
+                  name="tier"
+                  control={control}
+                  render={({ field }) => (
+                    <Select
+                      disabled={false}
+                      {...field}
+                      id="tier"
+                      options={tierOptions}
+                      isSearchable
+                      placeholder="Selecciona tier..."
+                      error={errors.tier}
                     />
-                  </div>
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="date">Fecha</Label>
-                  <Input
-                    type="text"
-                    id="date"
-                    className="w-full mr-3 mt-3"
-                    {...register("date", { required: true })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="game">Juego</Label>
-                  <Input
-                    type="text"
-                    id="game"
-                    className="mr-3 mt-3 w-full"
-                    {...register("game", { required: true })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="season">Season</Label>
-                  <Input
-                    type="number"
-                    id="season"
-                    className="mr-3 mt-3 w-full"
-                    {...register("season", { required: true })}
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="champion">Campeon</Label>
-                  <FormInline className="flex-col md:flex-row gap-4">
-                    <div className="md:w-full">
-                      <Input
-                        type="text"
-                        id="champion"
-                        className="mr-3 mt-3 w-full"
-                        {...register("champion", { required: true })}
-                      />
-                    </div>
-                    <div className="md:w-full -mt-5">
-                      <Label htmlFor="championTeam">Equipo Campeon</Label>
-                      <Input
-                        type="text"
-                        id="championTeam"
-                        className="mr-3 mt-3 w-full"
-                        {...register("championTeam", { required: true })}
-                      />
-                    </div>
-                  </FormInline>
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="runnerUp">SubCampeon</Label>
-                  <FormInline className="flex-col md:flex-row gap-4">
-                    <div className="md:w-full">
-                      <Input
-                        type="text"
-                        id="runnerUp"
-                        className="mr-3 mt-3 w-full"
-                        {...register("runnerUp", { required: true })}
-                      />
-                    </div>
-                    <div className="md:w-full -mt-5">
-                      <Label htmlFor="runnerUpTeam">Equipo Subcampeon</Label>
-                      <Input
-                        type="text"
-                        id="runnerUpTeam"
-                        className="mr-3 mt-3 w-full"
-                        {...register("runnerUpTeam", { required: true })}
-                      />
-                    </div>
-                  </FormInline>
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="players">Jugadores</Label>
-                  <FormInline className="flex-col md:flex-row gap-4">
-                    <div className="md:w-full">
-                      <Input
-                        type="number"
-                        id="players"
-                        className="mr-3 mt-3 w-full"
-                        {...register("players", { required: true })}
-                      />
-                    </div>
-                    <div className="md:w-full -mt-5">
-                      <Label htmlFor="tier">Tier</Label>
-                      <div className="w-50 mr-3 mt-3">
-                        <Controller
-                          name="tier"
-                          control={control}
-                          render={({ field }) => (
-                            <Select
-                              disabled={false}
-                              {...field}
-                              id="tier"
-                              options={tierOptions}
-                              isSearchable
-                              error={errors.tier}
-                            />
-                          )}
-                        />
-                      </div>
-                    </div>
-                  </FormInline>
-                </FormGroup>
+                  )}
+                />
               </div>
             </div>
           </ModalBody>
 
           <ModalFooter>
-            <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-              <span className="flex w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:col-start-2">
-                <Button
-                  type="button"
-                  variant="danger"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  onClick={onClose}
-                >
-                  Cancelar
-                </Button>
-              </span>
-
-              <span className="flex w-full rounded-md shadow-sm sm:col-start-1">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                  loading={isLoadingAddition}
-                >
-                  Añadir
-                </Button>
-              </span>
+            <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-3">
+              <Button
+                type="button"
+                variant="secondary"
+                fullWidth
+                onClick={onClose}
+                className="sm:w-auto"
+              >
+                Cancelar
+              </Button>
+              <Button
+                type="submit"
+                variant="primary"
+                fullWidth
+                loading={isLoadingAddition}
+                className="sm:w-auto"
+              >
+                Añadir Torneo
+              </Button>
             </div>
           </ModalFooter>
         </form>

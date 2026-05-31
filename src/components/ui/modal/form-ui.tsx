@@ -1,12 +1,12 @@
-import React, { ComponentPropsWithoutRef, useState } from 'react';
-import { Ring, Elipsis } from './spinners';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames';
-import { twMerge } from 'tailwind-merge';
+import React, { ComponentPropsWithoutRef, useState } from "react";
+import { Ring, Elipsis } from "./spinners";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
-interface ContainerProps extends React.ComponentPropsWithoutRef<'div'> {
-  size: 'small' | 'some' | 'large';
+interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {
+  size: "small" | "some" | "large";
   children: React.ReactNode;
 }
 
@@ -14,12 +14,12 @@ type DivRef = HTMLDivElement;
 
 export const Container = React.forwardRef<DivRef, ContainerProps>(function Container(
   { className, ...props }: ContainerProps,
-  ref,
+  ref
 ) {
   const styles = {
-    small: `max-w-sm px-6 mx-auto sm:max-w-lg md:max-w-xl lg:max-w-2xl`,
-    some: `max-w-xl px-6 mx-auto lg:max-w-3xl lg:px-0`,
-    large: `max-w-full px-4 mx-auto sm:px-6 lg:px-8`,
+    small: `max-w-sm px-4 mx-auto sm:max-w-lg sm:px-6 md:max-w-xl lg:max-w-2xl`,
+    some: `max-w-xl px-4 mx-auto sm:px-6 lg:max-w-3xl`,
+    large: `max-w-7xl px-4 mx-auto sm:px-6 lg:px-8`,
   };
 
   return (
@@ -29,7 +29,13 @@ export const Container = React.forwardRef<DivRef, ContainerProps>(function Conta
   );
 });
 
-export function Spacer({ size = 'md', className }: { size: 'md' | 'lg' | 'xl'; className?: string }) {
+export function Spacer({
+  size = "md",
+  className,
+}: {
+  size: "md" | "lg" | "xl";
+  className?: string;
+}) {
   const styles = {
     md: `mt-8`,
     lg: `mt-8 md:mt-10 xl:mt-16`,
@@ -38,15 +44,15 @@ export function Spacer({ size = 'md', className }: { size: 'md' | 'lg' | 'xl'; c
   return <div className={calculateClassName(styles[size], className)}></div>;
 }
 
-interface FormInLineProps extends ComponentPropsWithoutRef<'div'> {
+interface FormInLineProps extends ComponentPropsWithoutRef<"div"> {
   className?: string;
 }
 
 export const FormInline = ({ className, ...props }: FormInLineProps) => (
-  <div className={calculateClassName(['flex', className])} {...props} />
+  <div className={calculateClassName(["flex", className])} {...props} />
 );
 
-export function Loader({ type = 'ring' }: { type: 'ring' | 'elipsis' }) {
+export function Loader({ type = "ring" }: { type: "ring" | "elipsis" }) {
   const types = {
     ring: Ring,
     elipsis: Elipsis,
@@ -55,17 +61,17 @@ export function Loader({ type = 'ring' }: { type: 'ring' | 'elipsis' }) {
   return <Spinner />;
 }
 
-interface FormGroupProps extends React.ComponentPropsWithoutRef<'div'> {
-  type?: 'normal' | 'inline';
+interface FormGroupProps extends React.ComponentPropsWithoutRef<"div"> {
+  type?: "normal" | "inline";
 }
 
 export const FormGroup = React.forwardRef<DivRef, FormGroupProps>(function FormGroup(
-  { type = 'normal', className, ...props }: FormGroupProps,
-  ref,
+  { type = "normal", className, ...props }: FormGroupProps,
+  ref
 ) {
   const styles = {
     normal: `flex flex-col`,
-    inline: `flex flex-row`,
+    inline: `flex flex-row gap-3`,
   };
 
   return (
@@ -74,6 +80,7 @@ export const FormGroup = React.forwardRef<DivRef, FormGroupProps>(function FormG
     </div>
   );
 });
+
 interface InjectedLoaderOverlayProps {
   onComplete(): void;
   onFormSubmit(): void;
@@ -88,19 +95,14 @@ export function LoaderOverlay({
   className?: string;
 }) {
   const [isLoading, setIsLoading] = useState(false);
-  const onComplete: () => void = () => {
-    setIsLoading(false);
-  };
-  const onFormSubmit: () => void = () => {
-    setIsLoading(true);
-  };
+  const onComplete: () => void = () => setIsLoading(false);
+  const onFormSubmit: () => void = () => setIsLoading(true);
+
   return (
-    <div className={calculateClassName('relative w-full', className)}>
+    <div className={calculateClassName("relative w-full", className)}>
       {isLoading && (
-        <div className="fixed z-10 inset-0 bg-gray-500 opacity-75">
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
-            <Loader type="ring" />
-          </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink-950/70 backdrop-blur-sm">
+          <Loader type="ring" />
         </div>
       )}
       {children({ onFormSubmit, onComplete })}
@@ -110,16 +112,24 @@ export function LoaderOverlay({
 
 export function LoadingText() {
   return (
-    <div className="text-gray-500">
-      <FontAwesomeIcon className="mr-1" icon={faCircleNotch} spin /> Loading
+    <div className="inline-flex items-center gap-2 text-white/70 text-sm">
+      <FontAwesomeIcon className="text-brand-300" icon={faCircleNotch} spin />
+      <span>Cargando...</span>
     </div>
   );
 }
 
 export function LoadingError() {
-  return <div className="bg-gray-200 text-gray-500 p-4 text-base">There was an error loading this content</div>;
+  return (
+    <div className="inline-flex items-center gap-2 rounded-xl border border-rose-400/20 bg-rose-500/10 px-4 py-3 text-rose-200 text-sm">
+      <FontAwesomeIcon icon={faTriangleExclamation} />
+      <span>Hubo un error cargando este contenido</span>
+    </div>
+  );
 }
 
-export function calculateClassName(...className: (string | (string | undefined)[] | undefined)[]) {
+export function calculateClassName(
+  ...className: (string | (string | undefined)[] | undefined)[]
+) {
   return twMerge(classNames(className));
 }

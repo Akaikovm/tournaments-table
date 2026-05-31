@@ -111,108 +111,117 @@ const Pool = () => {
   }, [matches]);
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="text-white mt-2">
-        <h4 className="text-sm">Nombre Participante</h4>
+    <div className="text-white">
+      {/* Participant name */}
+      <div className="rounded-3xl glass gradient-border p-5 sm:p-6 mb-5">
+        <label
+          htmlFor="participant"
+          className="block text-[10px] uppercase tracking-[0.2em] text-white/50 font-semibold mb-2"
+        >
+          Nombre del participante
+        </label>
         <input
+          id="participant"
           type="text"
-          className="w-60 p-3 text-left bg-gray-700 rounded-lg mt-2"
+          placeholder="Tu nombre..."
+          className="w-full sm:w-80 px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-white placeholder-white/40 focus:outline-none focus:border-brand-400/70 focus:ring-2 focus:ring-brand-400/30 hover:border-white/20 transition-all"
           onChange={(e) => setParticipantName(e.target.value)}
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {matches.map((match, index) => (
           <div
             key={index}
-            className="bg-gray-800 p-8 rounded-lg shadow-lg text-white"
+            className="relative overflow-hidden rounded-3xl glass gradient-border p-5"
           >
-            <div className="text-center mb-2">{formatDate(match?.date)}</div>
-            <div className="flex h-[90px] items-center justify-between">
-              <div className="flex flex-col items-center text-white">
-                <img
-                  src={countryLogos[match?.localTeam]}
-                  className="w-12 h-12 mb-2"
-                  alt={`${match?.localTeam} logo`}
-                />
-                <span>{match?.localTeam}</span>
+            <div className="text-center text-[11px] uppercase tracking-wider text-white/55">
+              {formatDate(match?.date)}
+            </div>
+            <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+              <div className="flex flex-col items-center text-center gap-1.5">
+                <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={countryLogos[match?.localTeam]}
+                    className="max-h-9 max-w-9 object-contain"
+                    alt={`${match?.localTeam} logo`}
+                  />
+                </div>
+                <span className="text-xs font-semibold text-white truncate max-w-full">
+                  {match?.localTeam}
+                </span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center gap-1.5">
                 <input
                   type="number"
                   value={scores[index].local}
                   onChange={(e) => {
                     const updatedScores = [...scores];
-                    updatedScores[index].local = parseInt(e.target.value);
+                    updatedScores[index].local = parseInt(e.target.value) || 0;
                     setScores(updatedScores);
                   }}
-                  className="w-12 p-3 text-center bg-gray-700 rounded-lg"
+                  className="w-12 h-12 text-center text-base font-display font-bold rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-brand-400/70 focus:ring-2 focus:ring-brand-400/30"
                 />
-                <span className="text-lg">-</span>
+                <span className="text-white/40 text-lg">−</span>
                 <input
                   type="number"
                   value={scores[index].away}
                   onChange={(e) => {
                     const updatedScores = [...scores];
-                    updatedScores[index].away = parseInt(e.target.value);
+                    updatedScores[index].away = parseInt(e.target.value) || 0;
                     setScores(updatedScores);
                   }}
-                  className="w-12 p-3 text-center bg-gray-700 rounded-lg"
+                  className="w-12 h-12 text-center text-base font-display font-bold rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-brand-400/70 focus:ring-2 focus:ring-brand-400/30"
                 />
               </div>
-              <div className="flex flex-col items-center text-white">
-                <img
-                  src={countryLogos[match?.awayTeam]}
-                  className="w-12 h-12 mb-2"
-                  alt={`${match?.awayTeam} logo`}
-                />
-                <span>{match?.awayTeam}</span>
+              <div className="flex flex-col items-center text-center gap-1.5">
+                <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={countryLogos[match?.awayTeam]}
+                    className="max-h-9 max-w-9 object-contain"
+                    alt={`${match?.awayTeam} logo`}
+                  />
+                </div>
+                <span className="text-xs font-semibold text-white truncate max-w-full">
+                  {match?.awayTeam}
+                </span>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {copySuccess && (
-        <div className="text-white mt-4 text-center">
-          <span>Envia informacion al admin</span>
-        </div>
-      )}
-
       {valuesSaved && (
-        <div className="text-white mt-4 text-center">
-          <span>Resultados Guardados, por favor copiar en portapapeles</span>
+        <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200 text-center">
+          Resultados guardados — copia y envia al admin.
         </div>
       )}
 
-      <div className="mt-10 flex justify-center">
-        <div className="flex items-center">
+      {copySuccess && (
+        <div className="mt-3 text-sm text-white/65 text-center">
+          {copySuccess}
+        </div>
+      )}
+
+      <div className="sticky bottom-4 mt-8">
+        <div className="mx-auto max-w-md rounded-2xl glass-strong gradient-border p-3 flex items-center gap-3">
           <Button
-            className={`mr-4 ${
-              !participantName.length
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-red-700"
-            }`}
-            variant="primary"
-            onClick={() => {
-              handleSaveResults();
-            }}
+            variant="secondary"
+            fullWidth
             disabled={!participantName.length}
+            onClick={handleSaveResults}
           >
             Guardar
           </Button>
           <Button
-            className={`${
-              !valuesSaved
-                ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-red-700"
-            }`}
             variant="primary"
+            fullWidth
             disabled={!valuesSaved}
             onClick={() => {
               copyToClipboard();
               setValuesSaved(false);
               alert(
-                "Resultados copiados en portapapeles, enviar informacion al admin"
+                "Resultados copiados en portapapeles, enviar al admin."
               );
             }}
           >

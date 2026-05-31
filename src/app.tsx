@@ -34,44 +34,63 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <div>
+    <div className="App relative min-h-screen text-white">
+      {/* Animated ambient mesh background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+      >
+        <div className="absolute -top-40 -left-40 h-[60vh] w-[60vh] rounded-full bg-amber-500/15 blur-3xl animate-float" />
+        <div
+          className="absolute -bottom-32 -right-32 h-[55vh] w-[55vh] rounded-full bg-orange-500/15 blur-3xl animate-float"
+          style={{ animationDelay: "1.2s" }}
+        />
+        <div
+          className="absolute top-1/3 right-1/4 h-[40vh] w-[40vh] rounded-full bg-rose-500/12 blur-3xl animate-float"
+          style={{ animationDelay: "2.4s" }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:22px_22px] opacity-40" />
+      </div>
+
       <QueryClientProvider client={queryClient}>
         <ToastProvider placement="bottom-left" autoDismissTimeout={5000}>
           <Provider>
             <Helmet defaultTitle="PGG's Tournament Series" />
             <Router basename="/tournaments-table">
               <Navbar />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route
-                  path="/tournaments-table"
-                  element={<TournamentsTable />}
-                />
-                <Route path="/titles" element={<Titles />} />
-                <Route path="/standings" element={<Standings />} />
-                <Route
-                  path="/tournament-details"
-                  element={<TournamentDetails />}
-                />
-                <Route path="/live-tournaments" element={<LiveTournaments />} />
-                <Route
-                  path="/completed-tournaments"
-                  element={<CompletedTournaments />}
-                />
-                <Route
-                  path="/formula-1-2023"
-                  element={<Formula1Tournament2023 />}
-                />
-                <Route
-                  path="/formula-1-2024"
-                  element={<Formula1Tournament2024 />}
-                />
-                <Route path="/driver/:name" element={<Driver />} />
-                <Route
-                  path="/americas-and-euro-cup-2024"
-                  element={<EuroCupAndAmericasCupTournament2024 />}
-                />
-              </Routes>
+              <main className="pt-2 pb-24 md:pb-12">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route
+                    path="/tournaments-table"
+                    element={<TournamentsTable />}
+                  />
+                  <Route path="/titles" element={<Titles />} />
+                  <Route path="/standings" element={<Standings />} />
+                  <Route
+                    path="/tournament-details"
+                    element={<TournamentDetails />}
+                  />
+                  <Route path="/live-tournaments" element={<LiveTournaments />} />
+                  <Route
+                    path="/completed-tournaments"
+                    element={<CompletedTournaments />}
+                  />
+                  <Route
+                    path="/formula-1-2023"
+                    element={<Formula1Tournament2023 />}
+                  />
+                  <Route
+                    path="/formula-1-2024"
+                    element={<Formula1Tournament2024 />}
+                  />
+                  <Route path="/driver/:name" element={<Driver />} />
+                  <Route
+                    path="/americas-and-euro-cup-2024"
+                    element={<EuroCupAndAmericasCupTournament2024 />}
+                  />
+                </Routes>
+              </main>
             </Router>
           </Provider>
         </ToastProvider>

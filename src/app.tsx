@@ -56,7 +56,7 @@ function App() {
         <ToastProvider placement="bottom-left" autoDismissTimeout={5000}>
           <Provider>
             <Helmet defaultTitle="PGG's Tournament Series" />
-            <Router basename="/tournaments-table">
+            <Router>
               <Navbar />
               <main className="pt-2 pb-24 md:pb-12">
                 <Routes>
